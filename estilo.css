@@ -17,6 +17,23 @@ header {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 16px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foto-perfil {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #dddddd;
+  flex-shrink: 0;
+}
+
+.cabecalho-texto {
+  flex: 1;
+  min-width: 0;
 }
 
 h1 {
@@ -168,5 +185,14 @@ footer {
   .aba-botao {
     font-size: 12px;
     padding: 6px 10px;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .contato {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
