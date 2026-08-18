@@ -23,102 +23,110 @@ document.addEventListener("DOMContentLoaded", function () {
 
       botao.classList.add("ativo");
 
-      const secao = document.getElementById(alvo);
+      const conteudo = document.getElementById(alvo);
 
-      if (secao) {
-        secao.classList.add("ativo");
+      if (conteudo) {
+        conteudo.classList.add("ativo");
       }
-
     });
 
   });
 
 
   /* =========================
-     IDIOMAS
+     TRADUÇÃO
   ========================= */
 
   const botoesIdioma = document.querySelectorAll(".idioma-botao");
 
-  function alterarIdioma(idioma) {
+  function traduzir(idioma) {
 
-    /*
-     * Altera todos os elementos que possuem
-     * data-pt e data-en.
-     */
-
-    const elementos = document.querySelectorAll("[data-pt][data-en]");
+    // Procura todos os elementos que possuem
+    // data-pt e data-en
+    const elementos = document.querySelectorAll(
+      "[data-pt][data-en]"
+    );
 
     elementos.forEach(function (elemento) {
 
-      elemento.textContent = elemento.getAttribute(
-        idioma === "en" ? "data-en" : "data-pt"
-      );
+      if (idioma === "en") {
 
-    });
+        elemento.textContent =
+          elemento.getAttribute("data-en");
 
+      } else {
 
-    /*
-     * Altera o idioma do documento.
-     */
+        elemento.textContent =
+          elemento.getAttribute("data-pt");
 
-    if (idioma === "en") {
-      document.documentElement.lang = "en";
-      document.title = "Lucas de Araujo Contreiras | Computer Science";
-    } else {
-      document.documentElement.lang = "pt-br";
-      document.title = "Lucas de Araujo Contreiras";
-    }
-
-
-    /*
-     * Marca a bandeira selecionada.
-     */
-
-    botoesIdioma.forEach(function (botao) {
-
-      botao.classList.remove("ativo");
-
-      if (botao.getAttribute("data-idioma") === idioma) {
-        botao.classList.add("ativo");
       }
 
     });
 
 
-    /*
-     * Salva a preferência do usuário.
-     */
+    // Atualiza o idioma da página
+    if (idioma === "en") {
 
+      document.documentElement.lang = "en";
+
+      document.title =
+        "Lucas de Araujo Contreiras | Computer Science";
+
+    } else {
+
+      document.documentElement.lang = "pt-br";
+
+      document.title =
+        "Lucas de Araujo Contreiras";
+
+    }
+
+
+    // Atualiza a bandeira selecionada
+    botoesIdioma.forEach(function (botao) {
+
+      botao.classList.remove("ativo");
+
+      if (
+        botao.getAttribute("data-idioma") === idioma
+      ) {
+
+        botao.classList.add("ativo");
+
+      }
+
+    });
+
+
+    // Salva a escolha
     localStorage.setItem("idioma", idioma);
+
+
+    // Atualiza a data
+    atualizarData(idioma);
   }
 
+
+  /* =========================
+     BOTÕES DE IDIOMA
+  ========================= */
 
   botoesIdioma.forEach(function (botao) {
 
     botao.addEventListener("click", function () {
 
-      const idioma = botao.getAttribute("data-idioma");
+      const idioma =
+        botao.getAttribute("data-idioma");
 
-      alterarIdioma(idioma);
+      traduzir(idioma);
 
     });
 
   });
 
 
-  /*
-   * Recupera o idioma salvo.
-   * Caso não exista, utiliza português.
-   */
-
-  const idiomaSalvo = localStorage.getItem("idioma") || "pt";
-
-  alterarIdioma(idiomaSalvo);
-
-
   /* =========================
-     DATA DE ATUALIZAÇÃO
+     DATA
   ========================= */
 
   const mesesPT = [
@@ -152,63 +160,53 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
 
-function atualizarData() {
+  function atualizarData(idioma) {
 
-  const hoje = new Date();
+    const hoje = new Date();
 
-  const dia = hoje.getDate();
-  const mes = hoje.getMonth();
-  const ano = hoje.getFullYear();
+    const dia = hoje.getDate();
+    const mes = hoje.getMonth();
+    const ano = hoje.getFullYear();
 
-  const idiomaAtual =
-    localStorage.getItem("idioma") || "pt";
+    let texto;
 
-  let texto;
+    if (idioma === "en") {
 
-  if (idiomaAtual === "en") {
+      texto =
+        mesesEN[mes] +
+        " " +
+        dia +
+        ", " +
+        ano;
 
-    texto =
-      mesesEN[mes] +
-      " " +
-      dia +
-      ", " +
-      ano;
+    } else {
 
-  } else {
+      texto =
+        dia +
+        " de " +
+        mesesPT[mes] +
+        " de " +
+        ano;
 
-    texto =
-      dia +
-      " de " +
-      mesesPT[mes] +
-      " de " +
-      ano;
+    }
+
+    const elemento =
+      document.getElementById("data-atualizacao");
+
+    if (elemento) {
+      elemento.textContent = texto;
+    }
+
   }
 
-  document.getElementById(
-    "data-atualizacao"
-  ).textContent = texto;
-}
 
+  /* =========================
+     IDIOMA INICIAL
+  ========================= */
 
-  /*
-   * Corrige a atualização da data quando o idioma é alterado.
-   */
+  const idiomaSalvo =
+    localStorage.getItem("idioma") || "pt";
 
-  const funcaoOriginalAlterarIdioma = alterarIdioma;
-
-  atualizarData();
-
-
-  botoesIdioma.forEach(function (botao) {
-
-    botao.addEventListener("click", function () {
-
-      setTimeout(function () {
-        atualizarData();
-      }, 0);
-
-    });
-
-  });
+  traduzir(idiomaSalvo);
 
 });
