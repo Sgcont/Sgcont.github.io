@@ -1,19 +1,31 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Lucas de Araujo Contreiras</title>
 
-  <link rel="stylesheet" href="estilo.css">
+  <link
+    rel="stylesheet"
+    href="estilo.css"
+  >
+
 </head>
+
 
 <body>
 
+
   <!-- =========================
-       SELETOR DE IDIOMA
+       IDIOMAS
   ========================== -->
 
   <div id="idiomas-seletor">
@@ -21,14 +33,16 @@
     <button
       class="idioma-botao ativo"
       data-idioma="pt"
-      title="Português">
+      title="Português"
+    >
       🇧🇷
     </button>
 
     <button
       class="idioma-botao"
       data-idioma="en"
-      title="English">
+      title="English"
+    >
       🇬🇧
     </button>
 
@@ -36,996 +50,1590 @@
 
 
   <!-- =========================
-       PORTUGUÊS
+       CABEÇALHO
   ========================== -->
 
-  <div class="idioma-conteudo" data-idioma-conteudo="pt">
+  <header>
 
-    <header>
+    <h1>
+      Lucas de Araujo Contreiras
+    </h1>
 
-      <h1>Lucas de Araujo Contreiras</h1>
+    <h2
+      data-pt="Estudante de Ciência da Computação"
+      data-en="Computer Science Student"
+    >
+      Estudante de Ciência da Computação
+    </h2>
 
-      <h2>Estudante de Ciência da Computação</h2>
+    <p
+      class="subtitulo"
+      data-pt="Universidade Federal do Rio de Janeiro (UFRJ)"
+      data-en="Federal University of Rio de Janeiro (UFRJ)"
+    >
+      Universidade Federal do Rio de Janeiro (UFRJ)
+    </p>
 
-      <p class="subtitulo">
-        Universidade Federal do Rio de Janeiro (UFRJ)
-      </p>
-
-    </header>
-
-
-    <nav id="abas">
-
-      <button class="aba-botao ativo" data-aba="objetivo-pt">
-        Objetivo
-      </button>
-
-      <button class="aba-botao" data-aba="formacao-pt">
-        Formação
-      </button>
-
-      <button class="aba-botao" data-aba="projetos-pt">
-        Projetos
-      </button>
-
-      <button class="aba-botao" data-aba="notas-pt">
-        Notas
-      </button>
-
-      <button class="aba-botao" data-aba="voluntario-pt">
-        Trabalho Voluntário
-      </button>
-
-      <button class="aba-botao" data-aba="cursos-pt">
-        Cursos
-      </button>
-
-      <button class="aba-botao" data-aba="competencias-pt">
-        Competências
-      </button>
-
-      <button class="aba-botao" data-aba="idiomas-pt">
-        Idiomas
-      </button>
-
-    </nav>
+  </header>
 
 
-    <div class="perfil-bloco">
+  <!-- =========================
+       ABAS
+  ========================== -->
 
-      <img
-        src="foto_perfil.jpg"
-        alt="Foto de Lucas de Araujo Contreiras"
-        class="foto-perfil">
+  <nav id="abas">
 
-      <div class="contato">
+    <button
+      class="aba-botao ativo"
+      data-aba="objetivo"
+      data-pt="Objetivo"
+      data-en="Objective"
+    >
+      Objetivo
+    </button>
 
-        <span>Irajá, Rio de Janeiro - RJ</span><br>
+    <button
+      class="aba-botao"
+      data-aba="formacao"
+      data-pt="Formação"
+      data-en="Education"
+    >
+      Formação
+    </button>
 
-        <a href="mailto:lucas@contreiras.info">
-          lucas@contreiras.info
-        </a><br>
+    <button
+      class="aba-botao"
+      data-aba="projetos"
+      data-pt="Projetos"
+      data-en="Projects"
+    >
+      Projetos
+    </button>
 
-        <span>(24) 99966-1279</span><br>
+    <button
+      class="aba-botao"
+      data-aba="notas"
+      data-pt="Notas"
+      data-en="Grades"
+    >
+      Notas
+    </button>
 
-        <a
-          href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
-          target="_blank">
-          LinkedIn
-        </a><br>
+    <button
+      class="aba-botao"
+      data-aba="voluntario"
+      data-pt="Trabalho Voluntário"
+      data-en="Volunteer Work"
+    >
+      Trabalho Voluntário
+    </button>
 
-        <a
-          href="https://github.com/Sgcont"
-          target="_blank">
-          GitHub
-        </a>
+    <button
+      class="aba-botao"
+      data-aba="cursos"
+      data-pt="Cursos"
+      data-en="Courses"
+    >
+      Cursos
+    </button>
 
-      </div>
+    <button
+      class="aba-botao"
+      data-aba="competencias"
+      data-pt="Competências"
+      data-en="Skills"
+    >
+      Competências
+    </button>
+
+    <button
+      class="aba-botao"
+      data-aba="idiomas"
+      data-pt="Idiomas"
+      data-en="Languages"
+    >
+      Idiomas
+    </button>
+
+  </nav>
+
+
+  <!-- =========================
+       PERFIL
+  ========================== -->
+
+  <div class="perfil-bloco">
+
+    <img
+      src="foto_perfil.jpg"
+      alt="Foto de Lucas de Araujo Contreiras"
+      class="foto-perfil"
+    >
+
+    <div class="contato">
+
+      <span>
+        Irajá, Rio de Janeiro - RJ
+      </span>
+
+      <br>
+
+      <a href="mailto:lucas@contreiras.info">
+        lucas@contreiras.info
+      </a>
+
+      <br>
+
+      <span>
+        (24) 99966-1279
+      </span>
+
+      <br>
+
+      <a
+        href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
+        target="_blank"
+      >
+        LinkedIn
+      </a>
+
+      <br>
+
+      <a
+        href="https://github.com/Sgcont"
+        target="_blank"
+      >
+        GitHub
+      </a>
 
     </div>
-
-
-    <main>
-
-      <!-- OBJETIVO -->
-
-      <section
-        id="objetivo-pt"
-        class="aba-conteudo ativo">
-
-        <h3>Objetivo</h3>
-
-        <p>
-          Vaga de estágio na área de Dados, com interesse em
-          Ciência de Dados, Inteligência Artificial / Machine Learning
-          e Engenharia de Dados, aplicando conhecimentos de banco de
-          dados, estatística e desenvolvimento de software na resolução
-          de problemas reais.
-        </p>
-
-      </section>
-
-
-      <!-- FORMAÇÃO -->
-
-      <section
-        id="formacao-pt"
-        class="aba-conteudo">
-
-        <h3>Formação Acadêmica</h3>
-
-        <article class="item">
-
-          <h4>
-            Bacharelado em Ciência da Computação — UFRJ
-          </h4>
-
-          <p class="meta">
-            2024.2 – 2028.2 (previsão) — CR atual: 8,4
-          </p>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Bacharelado em Ciências Matemáticas e da Terra — UFRJ
-          </h4>
-
-          <p class="meta">
-            2022.2 — transferido internamente para Ciência da Computação
-          </p>
-
-        </article>
-
-      </section>
-
-
-      <!-- PROJETOS -->
-
-      <section
-        id="projetos-pt"
-        class="aba-conteudo">
-
-        <h3>Projetos</h3>
-
-
-        <article class="item">
-
-          <h4>
-            Classificador de Flores Iris com Machine Learning em C
-          </h4>
-
-          <p class="meta">
-            Aplicação de aprendizado de máquina implementada em C
-          </p>
-
-          <ul>
-
-            <li>
-              Programa desenvolvido em C para analisar o banco de
-              dados Iris e treinar um modelo capaz de classificar
-              a espécie de uma flor a partir das medidas de pétalas
-              e sépalas.
-            </li>
-
-            <li>
-              Implementação de algoritmo de classificação do zero,
-              sem bibliotecas de alto nível, reforçando o entendimento
-              dos fundamentos matemáticos por trás do aprendizado
-              de máquina.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Análise dos Top 1000 Filmes do IMDB
-          </h4>
-
-          <p class="meta">
-            Python, Pandas, Matplotlib, Streamlit
-          </p>
-
-          <ul>
-
-            <li>
-              Análise exploratória de dados de um dataset com os
-              1000 filmes mais bem avaliados do IMDB, incluindo
-              tratamento e limpeza dos dados com Pandas.
-            </li>
-
-            <li>
-              Criação de visualizações estatísticas com Matplotlib
-              e construção de um dashboard interativo em Streamlit
-              para exploração dos resultados.
-            </li>
-
-            <li>
-              Versionamento do projeto com Git/GitHub, incluindo
-              commits organizados e histórico de evolução do código.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Análise da Criminalidade no Rio de Janeiro
-          </h4>
-
-          <p class="meta">
-            Python, SVD, PCA, K-Means — projeto da disciplina
-            Computação Científica e Análise de Dados (COCADA)
-          </p>
-
-          <ul>
-
-            <li>
-              Aplicação de Decomposição em Valores Singulares (SVD)
-              e Análise de Componentes Principais (PCA) sobre dados
-              de criminalidade do Instituto de Segurança Pública
-              do Rio de Janeiro (ISP-RJ).
-            </li>
-
-            <li>
-              Uso de K-Means para agrupamento de regiões com padrões
-              de criminalidade semelhantes e cálculo de variância
-              explicada para avaliação da qualidade da redução de
-              dimensionalidade.
-            </li>
-
-            <li>
-              Construção de visualizações para identificar tendências
-              e padrões espaciais de criminalidade entre bairros.
-            </li>
-
-            <li>
-              Versionamento com Git/GitHub em colaboração com o grupo.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Transportes Rio — Oferta de Transporte Público e Demografia
-          </h4>
-
-          <p class="meta">
-            SQL, MySQL, Python (Geopandas), HTML — projeto da disciplina
-            Banco de Dados I (ICP489)
-          </p>
-
-          <ul>
-
-            <li>
-              Modelagem e implementação de um banco de dados relacional
-              em MySQL correlacionando dados GTFS de transporte público
-              com informações demográficas por região do Rio de Janeiro.
-            </li>
-
-            <li>
-              Desenvolvimento de consultas SQL para determinar as
-              regiões com maior oferta de transporte.
-            </li>
-
-            <li>
-              Construção de aplicação web em Flask com mapa interativo
-              permitindo consultar destinos acessíveis a partir de
-              um ponto de partida.
-            </li>
-
-            <li>
-              Uso de Geopandas para tratamento e cruzamento de dados
-              geoespaciais.
-            </li>
-
-            <li>
-              Colaboração via Git/GitHub em equipe, com uso de branches,
-              merges e pull requests.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- NOTAS -->
-
-      <section
-        id="notas-pt"
-        class="aba-conteudo">
-
-        <h3>Histórico Acadêmico</h3>
-
-        <div class="resumo-notas">
-
-          <div class="resumo-card">
-            <strong>8,4</strong>
-            <span>CR atual</span>
-          </div>
-
-          <div class="resumo-card">
-            <strong>UFRJ</strong>
-            <span>Instituição</span>
-          </div>
-
-        </div>
-
-        <p>
-          Histórico acadêmico organizado por período.
-        </p>
-
-        <!--
-          COLOQUE AQUI SUA TABELA COMPLETA DE NOTAS.
-          Podemos inserir todas as disciplinas depois.
-        -->
-
-      </section>
-
-
-      <!-- VOLUNTÁRIO -->
-
-      <section
-        id="voluntario-pt"
-        class="aba-conteudo">
-
-        <h3>Trabalho Voluntário</h3>
-
-        <article class="item">
-
-          <h4>
-            Lar Mãe Ritinha (lar de idosas) — Voluntário
-          </h4>
-
-          <p class="meta">
-            Desde 2023
-          </p>
-
-          <ul>
-
-            <li>
-              Controle e análise em Excel da chegada de alimentos
-              doados à instituição.
-            </li>
-
-            <li>
-              Criação de painel em Power BI para visualização e
-              acompanhamento dos dados de doações.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- CURSOS -->
-
-      <section
-        id="cursos-pt"
-        class="aba-conteudo">
-
-        <h3>Cursos e Atividades Complementares</h3>
-
-        <article class="item">
-
-          <h4>For_code</h4>
-
-          <ul>
-
-            <li>
-              Desenvolvimento de exercícios e scripts práticos
-              em Python e SQL nos minicursos de Análise de Dados.
-            </li>
-
-            <li>
-              Atuação como instrutor, ensinando conceitos de LGPD
-              e orientando a aplicação prática dos conteúdos em Notion.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- COMPETÊNCIAS -->
-
-      <section
-        id="competencias-pt"
-        class="aba-conteudo">
-
-        <h3>Competências Técnicas</h3>
-
-        <ul class="lista-competencias">
-
-          <li>
-            <strong>Linguagens:</strong>
-            Python, C, Java, SQL
-          </li>
-
-          <li>
-            <strong>Dados:</strong>
-            Pandas, Matplotlib, Geopandas, MySQL, Excel,
-            Power BI, análise estatística (PCA, SVD, K-Means)
-          </li>
-
-          <li>
-            <strong>Web/Frameworks:</strong>
-            Flask, Streamlit, HTML
-          </li>
-
-          <li>
-            <strong>Ferramentas:</strong>
-            Git, GitHub
-          </li>
-
-        </ul>
-
-      </section>
-
-
-      <!-- IDIOMAS -->
-
-      <section
-        id="idiomas-pt"
-        class="aba-conteudo">
-
-        <h3>Idiomas</h3>
-
-        <ul class="lista-competencias">
-
-          <li>
-            <strong>Português:</strong>
-            Nativo
-          </li>
-
-          <li>
-            <strong>Inglês:</strong>
-            Intermediário
-          </li>
-
-          <li>
-            <strong>Espanhol:</strong>
-            Intermediário
-          </li>
-
-        </ul>
-
-      </section>
-
-    </main>
-
-
-    <footer>
-      <p>
-        Última atualização em
-        <span id="data-atualizacao-pt"></span>
-      </p>
-    </footer>
 
   </div>
 
 
   <!-- =========================
-       INGLÊS
+       CONTEÚDO
   ========================== -->
 
-  <div
-    class="idioma-conteudo"
-    data-idioma-conteudo="en"
-    style="display: none;">
+  <main>
 
-    <header>
 
-      <h1>Lucas de Araujo Contreiras</h1>
+    <!-- =========================
+         OBJETIVO
+    ========================== -->
 
-      <h2>Computer Science Student</h2>
+    <section
+      id="objetivo"
+      class="aba-conteudo ativo"
+    >
 
-      <p class="subtitulo">
-        Federal University of Rio de Janeiro (UFRJ)
+      <h3
+        data-pt="Objetivo"
+        data-en="Objective"
+      >
+        Objetivo
+      </h3>
+
+      <p
+        data-pt="Vaga de estágio na área de Dados, com interesse em Ciência de Dados, Inteligência Artificial / Machine Learning e Engenharia de Dados, aplicando conhecimentos de banco de dados, estatística e desenvolvimento de software na resolução de problemas reais."
+        data-en="Internship opportunity in Data, with an interest in Data Science, Artificial Intelligence / Machine Learning and Data Engineering, applying knowledge of databases, statistics and software development to solve real-world problems."
+      >
+        Vaga de estágio na área de Dados, com interesse em Ciência de Dados,
+        Inteligência Artificial / Machine Learning e Engenharia de Dados,
+        aplicando conhecimentos de banco de dados, estatística e desenvolvimento
+        de software na resolução de problemas reais.
       </p>
 
-    </header>
+    </section>
 
 
-    <nav id="abas-en">
+    <!-- =========================
+         FORMAÇÃO
+    ========================== -->
 
-      <button
-        class="aba-botao ativo"
-        data-aba="objetivo-en">
-        Objective
-      </button>
+    <section
+      id="formacao"
+      class="aba-conteudo"
+    >
 
-      <button
-        class="aba-botao"
-        data-aba="formacao-en">
-        Education
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="projetos-en">
-        Projects
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="notas-en">
-        Academic Record
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="voluntario-en">
-        Volunteer Work
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="cursos-en">
-        Courses
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="competencias-en">
-        Skills
-      </button>
-
-      <button
-        class="aba-botao"
-        data-aba="idiomas-en">
-        Languages
-      </button>
-
-    </nav>
+      <h3
+        data-pt="Formação Acadêmica"
+        data-en="Academic Education"
+      >
+        Formação Acadêmica
+      </h3>
 
 
-    <div class="perfil-bloco">
+      <article class="item">
 
-      <img
-        src="foto_perfil.jpg"
-        alt="Photo of Lucas de Araujo Contreiras"
-        class="foto-perfil">
+        <h4>
+          Bacharelado em Ciência da Computação — UFRJ
+        </h4>
 
-      <div class="contato">
+        <p class="meta">
+          2024.2 – 2028.2 (previsão) — CR atual: 8,4
+        </p>
 
-        <span>Irajá, Rio de Janeiro - RJ</span><br>
+      </article>
 
-        <a href="mailto:lucas@contreiras.info">
-          lucas@contreiras.info
-        </a><br>
 
-        <span>(24) 99966-1279</span><br>
+      <article class="item">
 
-        <a
-          href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
-          target="_blank">
-          LinkedIn
-        </a><br>
+        <h4>
+          Bacharelado em Ciências Matemáticas e da Terra — UFRJ
+        </h4>
 
-        <a
-          href="https://github.com/Sgcont"
-          target="_blank">
-          GitHub
-        </a>
+        <p class="meta">
+          2022.2 — transferido internamente para Ciência da Computação
+        </p>
 
-      </div>
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         PROJETOS
+    ========================== -->
+
+    <section
+      id="projetos"
+      class="aba-conteudo"
+    >
+
+      <h3
+        data-pt="Projetos"
+        data-en="Projects"
+      >
+        Projetos
+      </h3>
+
+
+      <article class="item">
+
+        <h4>
+          Classificador de Flores Iris com Machine Learning em C
+        </h4>
+
+        <p class="meta">
+          Aplicação de aprendizado de máquina implementada em C
+        </p>
+
+        <ul>
+
+          <li>
+            Programa desenvolvido em C para analisar o banco de dados Iris
+            e treinar um modelo capaz de classificar a espécie de uma flor
+            a partir das medidas de pétalas e sépalas.
+          </li>
+
+          <li>
+            Implementação de algoritmo de classificação do zero, sem
+            bibliotecas de alto nível, reforçando o entendimento dos
+            fundamentos matemáticos por trás do aprendizado de máquina.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="item">
+
+        <h4>
+          Análise dos Top 1000 Filmes do IMDB
+        </h4>
+
+        <p class="meta">
+          Python, Pandas, Matplotlib, Streamlit
+        </p>
+
+        <ul>
+
+          <li>
+            Análise exploratória de dados de um dataset com os 1000 filmes
+            mais bem avaliados do IMDB, incluindo tratamento e limpeza dos
+            dados com Pandas.
+          </li>
+
+          <li>
+            Criação de visualizações estatísticas com Matplotlib e construção
+            de um dashboard interativo em Streamlit para exploração dos resultados.
+          </li>
+
+          <li>
+            Versionamento do projeto com Git/GitHub, incluindo commits
+            organizados e histórico de evolução do código.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="item">
+
+        <h4>
+          Análise da Criminalidade no Rio de Janeiro
+        </h4>
+
+        <p class="meta">
+          Python, SVD, PCA, K-Means — projeto da disciplina Computação
+          Científica e Análise de Dados (COCADA)
+        </p>
+
+        <ul>
+
+          <li>
+            Aplicação de Decomposição em Valores Singulares (SVD) e
+            Análise de Componentes Principais (PCA) sobre dados de
+            criminalidade do Instituto de Segurança Pública do Rio de Janeiro.
+          </li>
+
+          <li>
+            Uso de K-Means para agrupamento de regiões com padrões de
+            criminalidade semelhantes e cálculo de variância explicada.
+          </li>
+
+          <li>
+            Construção de visualizações para identificar tendências e
+            padrões espaciais de criminalidade entre bairros.
+          </li>
+
+          <li>
+            Versionamento com Git/GitHub em colaboração com o grupo.
+          </li>
+
+        </ul>
+
+      </article>
+
+
+      <article class="item">
+
+        <h4>
+          Transportes Rio — Oferta de Transporte Público e Demografia
+        </h4>
+
+        <p class="meta">
+          SQL, MySQL, Python (Geopandas), HTML — projeto da disciplina
+          Banco de Dados I (ICP489)
+        </p>
+
+        <ul>
+
+          <li>
+            Modelagem e implementação de um banco de dados relacional
+            em MySQL correlacionando dados GTFS de transporte público
+            com informações demográficas.
+          </li>
+
+          <li>
+            Desenvolvimento de consultas SQL para determinar regiões
+            com maior oferta de transporte.
+          </li>
+
+          <li>
+            Construção de aplicação web em Flask com mapa interativo
+            permitindo consultar destinos acessíveis.
+          </li>
+
+          <li>
+            Uso de Geopandas para tratamento e cruzamento de dados geoespaciais.
+          </li>
+
+          <li>
+            Colaboração via Git/GitHub em equipe, com uso de branches,
+            merges e pull requests.
+          </li>
+
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         NOTAS
+    ========================== -->
+
+    <!-- =========================
+     NOTAS
+========================= -->
+
+<section
+  id="notas"
+  class="aba-conteudo"
+>
+
+  <h3
+    data-pt="Histórico Acadêmico"
+    data-en="Academic Record"
+  >
+    Histórico Acadêmico
+  </h3>
+
+
+  <div class="resumo-notas">
+
+    <div class="resumo-card">
+
+      <strong>8,4</strong>
+
+      <span
+        data-pt="CR atual"
+        data-en="Current GPA"
+      >
+        CR atual
+      </span>
 
     </div>
 
 
-    <main>
+    <div class="resumo-card">
 
-      <!-- OBJECTIVE -->
+      <strong>UFRJ</strong>
 
-      <section
-        id="objetivo-en"
-        class="aba-conteudo ativo">
+      <span
+        data-pt="Instituição"
+        data-en="Institution"
+      >
+        Instituição
+      </span>
 
-        <h3>Objective</h3>
-
-        <p>
-          Internship opportunity in the Data field, with an interest
-          in Data Science, Artificial Intelligence / Machine Learning,
-          and Data Engineering. I aim to apply my knowledge of databases,
-          statistics, and software development to solve real-world problems.
-        </p>
-
-      </section>
-
-
-      <!-- EDUCATION -->
-
-      <section
-        id="formacao-en"
-        class="aba-conteudo">
-
-        <h3>Academic Background</h3>
-
-        <article class="item">
-
-          <h4>
-            Bachelor's Degree in Computer Science — UFRJ
-          </h4>
-
-          <p class="meta">
-            2024.2 – 2028.2 (expected) — Current GPA: 8.4
-          </p>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Bachelor's Degree in Mathematical and Earth Sciences — UFRJ
-          </h4>
-
-          <p class="meta">
-            2022.2 — Internally transferred to Computer Science
-          </p>
-
-        </article>
-
-      </section>
-
-
-      <!-- PROJECTS -->
-
-      <section
-        id="projetos-en"
-        class="aba-conteudo">
-
-        <h3>Projects</h3>
-
-
-        <article class="item">
-
-          <h4>
-            Iris Flower Classifier with Machine Learning in C
-          </h4>
-
-          <p class="meta">
-            Machine learning application implemented in C
-          </p>
-
-          <ul>
-
-            <li>
-              C program developed to analyze the Iris dataset and
-              train a model capable of classifying flower species
-              based on petal and sepal measurements.
-            </li>
-
-            <li>
-              Classification algorithm implemented from scratch,
-              without high-level libraries, strengthening the
-              understanding of the mathematical foundations of
-              machine learning.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Analysis of the IMDB Top 1000 Movies
-          </h4>
-
-          <p class="meta">
-            Python, Pandas, Matplotlib, Streamlit
-          </p>
-
-          <ul>
-
-            <li>
-              Exploratory data analysis of a dataset containing
-              the 1,000 highest-rated movies on IMDB, including
-              data cleaning and preprocessing with Pandas.
-            </li>
-
-            <li>
-              Creation of statistical visualizations with Matplotlib
-              and an interactive Streamlit dashboard for exploring
-              the results.
-            </li>
-
-            <li>
-              Project version control with Git/GitHub, including
-              organized commits and development history.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Crime Analysis in Rio de Janeiro
-          </h4>
-
-          <p class="meta">
-            Python, SVD, PCA, K-Means — project developed for the
-            Scientific Computing and Data Analysis course (COCADA)
-          </p>
-
-          <ul>
-
-            <li>
-              Application of Singular Value Decomposition (SVD)
-              and Principal Component Analysis (PCA) to crime data
-              from the Rio de Janeiro Public Security Institute (ISP-RJ).
-            </li>
-
-            <li>
-              Use of K-Means to group regions with similar crime
-              patterns and calculation of explained variance to
-              evaluate dimensionality reduction.
-            </li>
-
-            <li>
-              Visualization of trends and spatial crime patterns
-              across neighborhoods.
-            </li>
-
-            <li>
-              Git/GitHub version control in collaboration with the team.
-            </li>
-
-          </ul>
-
-        </article>
-
-
-        <article class="item">
-
-          <h4>
-            Rio Public Transportation — Transport Supply and Demographics
-          </h4>
-
-          <p class="meta">
-            SQL, MySQL, Python (Geopandas), HTML — Database I course project
-          </p>
-
-          <ul>
-
-            <li>
-              Relational database modeling and implementation in MySQL,
-              correlating GTFS public transportation data with demographic
-              information for regions of Rio de Janeiro.
-            </li>
-
-            <li>
-              Development of SQL queries to identify regions with
-              greater transportation availability.
-            </li>
-
-            <li>
-              Development of a Flask web application with an interactive
-              map for querying accessible destinations from a starting point.
-            </li>
-
-            <li>
-              Use of Geopandas for processing and combining geospatial data.
-            </li>
-
-            <li>
-              Team collaboration through Git/GitHub using branches,
-              merges, and pull requests.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- ACADEMIC RECORD -->
-
-      <section
-        id="notas-en"
-        class="aba-conteudo">
-
-        <h3>Academic Record</h3>
-
-        <div class="resumo-notas">
-
-          <div class="resumo-card">
-
-            <strong>8.4</strong>
-
-            <span>Current GPA</span>
-
-          </div>
-
-          <div class="resumo-card">
-
-            <strong>UFRJ</strong>
-
-            <span>Institution</span>
-
-          </div>
-
-        </div>
-
-        <p>
-          Academic record organized by semester.
-        </p>
-
-      </section>
-
-
-      <!-- VOLUNTEER -->
-
-      <section
-        id="voluntario-en"
-        class="aba-conteudo">
-
-        <h3>Volunteer Work</h3>
-
-        <article class="item">
-
-          <h4>
-            Lar Mãe Ritinha — Volunteer
-          </h4>
-
-          <p class="meta">
-            Since 2023
-          </p>
-
-          <ul>
-
-            <li>
-              Excel-based control and analysis of food donations
-              received by the institution.
-            </li>
-
-            <li>
-              Creation of a Power BI dashboard for visualization
-              and monitoring of donation data.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- COURSES -->
-
-      <section
-        id="cursos-en"
-        class="aba-conteudo">
-
-        <h3>Courses and Complementary Activities</h3>
-
-        <article class="item">
-
-          <h4>For_code</h4>
-
-          <ul>
-
-            <li>
-              Development of practical Python and SQL exercises
-              and scripts for Data Analysis workshops.
-            </li>
-
-            <li>
-              Worked as an instructor, teaching LGPD concepts and
-              guiding the practical application of the content in Notion.
-            </li>
-
-          </ul>
-
-        </article>
-
-      </section>
-
-
-      <!-- SKILLS -->
-
-      <section
-        id="competencias-en"
-        class="aba-conteudo">
-
-        <h3>Technical Skills</h3>
-
-        <ul class="lista-competencias">
-
-          <li>
-            <strong>Languages:</strong>
-            Python, C, Java, SQL
-          </li>
-
-          <li>
-            <strong>Data:</strong>
-            Pandas, Matplotlib, Geopandas, MySQL, Excel,
-            Power BI, statistical analysis (PCA, SVD, K-Means)
-          </li>
-
-          <li>
-            <strong>Web/Frameworks:</strong>
-            Flask, Streamlit, HTML
-          </li>
-
-          <li>
-            <strong>Tools:</strong>
-            Git, GitHub
-          </li>
-
-        </ul>
-
-      </section>
-
-
-      <!-- LANGUAGES -->
-
-      <section
-        id="idiomas-en"
-        class="aba-conteudo">
-
-        <h3>Languages</h3>
-
-        <ul class="lista-competencias">
-
-          <li>
-            <strong>Portuguese:</strong>
-            Native
-          </li>
-
-          <li>
-            <strong>English:</strong>
-            Intermediate
-          </li>
-
-          <li>
-            <strong>Spanish:</strong>
-            Intermediate
-          </li>
-
-        </ul>
-
-      </section>
-
-    </main>
-
-
-    <footer>
-
-      <p>
-        Last updated on
-        <span id="data-atualizacao-en"></span>
-      </p>
-
-    </footer>
+    </div>
 
   </div>
+
+
+  <p
+    data-pt="Histórico acadêmico organizado por período."
+    data-en="Academic record organized by semester."
+  >
+    Histórico acadêmico organizado por período.
+  </p>
+
+
+  <!-- =========================
+       2022/2
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2022/2
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP121</td>
+          <td>Computação I</td>
+          <td class="nota">8,5</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>CMT111</td>
+          <td>Inovações Cient Tecn e Art I</td>
+          <td class="nota">7,2</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>FIW112</td>
+          <td>Introducao à Fisica A</td>
+          <td class="nota">10,0</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>FIW113</td>
+          <td>Introducao à Fisica B</td>
+          <td class="nota">10,0</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>MAW117</td>
+          <td>Introdução ao Cálculo</td>
+          <td class="nota">10,0</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>CMA110</td>
+          <td>Tóp Gerais Ciências da Terra</td>
+          <td class="nota">8,4</td>
+          <td
+            class="aprovado"
+            data-pt="Aprovado"
+            data-en="Passed"
+          >
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2023/1
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2023/1
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP241</td>
+          <td>Computação II</td>
+          <td class="nota">9,5</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>MAC118</td>
+          <td>Cálculo Difer e Integral I</td>
+          <td class="nota">10,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>FIS111</td>
+          <td>Física Experimental I</td>
+          <td class="nota">7,1</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>CMT121</td>
+          <td>Inovações Cient Tecn e Art II</td>
+          <td class="nota">10,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>CMT012</td>
+          <td>Introdução à Programação C/c++</td>
+          <td class="nota">9,2</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2023/2
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2023/2
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>NCG011</td>
+          <td>Acessando a Mente e o Espaço</td>
+          <td class="nota">10,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>MAC128</td>
+          <td>Cálculo Diferen e Integral II</td>
+          <td class="nota">6,7</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>NCG017</td>
+          <td>Empreendedorismo Tecnol e Ciên</td>
+          <td class="nota">9,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>CMT231</td>
+          <td>Inovações Cient Tecn e Art III</td>
+          <td class="nota">10,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>IGT603</td>
+          <td>Poluição do ar</td>
+          <td class="nota">7,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2024/1
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2024/1
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP111</td>
+          <td>Fund Computação Digital</td>
+          <td class="nota">7,8</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>FIT111</td>
+          <td>Física I</td>
+          <td class="nota">6,9</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>MAE125</td>
+          <td>Álgebra Linear</td>
+          <td class="nota">6,9</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2024/2
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2024/2
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP136</td>
+          <td>Introd Pensamento Dedutivo</td>
+          <td class="nota">9,2</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP134</td>
+          <td>Números Inteiros Criptografia</td>
+          <td class="nota">9,6</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP142</td>
+          <td>Organização de Dados I</td>
+          <td class="nota">9,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP132</td>
+          <td>Processos de Software</td>
+          <td class="nota">5,9</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP135</td>
+          <td>Projeto de Carreira</td>
+          <td class="nota">9,3</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2025/1
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2025/1
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP145</td>
+          <td>Habilidades Sociais p Trabalho</td>
+          <td class="nota">9,2</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP238</td>
+          <td>Introd à Computação Numérica</td>
+          <td class="nota">7,8</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP237</td>
+          <td>Introd à Modelagem de Sistemas</td>
+          <td class="nota">8,3</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP144</td>
+          <td>Matemática Discreta</td>
+          <td class="nota">7,7</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP143</td>
+          <td>Projeto Prático</td>
+          <td class="nota">8,6</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>NEP101</td>
+          <td>Teoria Direitos Fundamentais</td>
+          <td class="nota">10,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2025/2
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2025/2
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP246</td>
+          <td>Arquitet Comput e Sist Operac</td>
+          <td class="nota">5,4</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>MAD243</td>
+          <td>Estatística e Probabilidade</td>
+          <td class="nota">7,9</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP116</td>
+          <td>Estruturas de Dados</td>
+          <td class="nota">5,7</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP115</td>
+          <td>Álgebra Linear Algorítmica</td>
+          <td class="nota">9,8</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- =========================
+       2026/1
+  ========================== -->
+
+  <h4 class="periodo-notas">
+    2026/1
+  </h4>
+
+  <div class="tabela-notas-container">
+
+    <table class="tabela-notas">
+
+      <thead>
+        <tr>
+
+          <th
+            data-pt="Código"
+            data-en="Code"
+          >
+            Código
+          </th>
+
+          <th
+            data-pt="Disciplina"
+            data-en="Course"
+          >
+            Disciplina
+          </th>
+
+          <th
+            data-pt="Nota"
+            data-en="Grade"
+          >
+            Nota
+          </th>
+
+          <th
+            data-pt="Situação"
+            data-en="Status"
+          >
+            Situação
+          </th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>ICP489</td>
+          <td>Banco de Dados I</td>
+          <td class="nota">6,6</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP248</td>
+          <td>Comput Científ e Análise Dados</td>
+          <td class="nota">7,8</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP239</td>
+          <td>Programação Orientada a Objeto</td>
+          <td class="nota">7,0</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+        <tr>
+          <td>ICP249</td>
+          <td>Tecnologia e Sociedade</td>
+          <td class="nota">9,7</td>
+          <td class="aprovado"
+              data-pt="Aprovado"
+              data-en="Passed">
+            Aprovado
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    </div>
+
+
+    </section>
+
+    <!-- =========================
+         TRABALHO VOLUNTÁRIO
+    ========================== -->
+
+    <section
+      id="voluntario"
+      class="aba-conteudo"
+    >
+
+      <h3
+        data-pt="Trabalho Voluntário"
+        data-en="Volunteer Work"
+      >
+        Trabalho Voluntário
+      </h3>
+
+
+      <article class="item">
+
+        <h4>
+          Lar Mãe Ritinha (lar de idosas) — Voluntário
+        </h4>
+
+        <p class="meta">
+          Desde 2023
+        </p>
+
+        <ul>
+
+          <li>
+            Controle e análise em Excel da chegada de alimentos doados à instituição.
+          </li>
+
+          <li>
+            Criação de painel em Power BI para visualização e acompanhamento
+            dos dados de doações.
+          </li>
+
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         CURSOS
+    ========================== -->
+
+    <section
+      id="cursos"
+      class="aba-conteudo"
+    >
+
+      <h3
+        data-pt="Cursos e Atividades Complementares"
+        data-en="Courses and Complementary Activities"
+      >
+        Cursos e Atividades Complementares
+      </h3>
+
+
+      <article class="item">
+
+        <h4>
+          For_code
+        </h4>
+
+        <ul>
+
+          <li>
+            Desenvolvimento de exercícios e scripts práticos em Python
+            e SQL nos minicursos de Análise de Dados.
+          </li>
+
+          <li>
+            Atuação como instrutor, ensinando conceitos de LGPD e
+            orientando a aplicação prática dos conteúdos em Notion.
+          </li>
+
+        </ul>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         COMPETÊNCIAS
+    ========================== -->
+
+    <section
+      id="competencias"
+      class="aba-conteudo"
+    >
+
+      <h3
+        data-pt="Competências Técnicas"
+        data-en="Technical Skills"
+      >
+        Competências Técnicas
+      </h3>
+
+
+      <ul class="lista-competencias">
+
+        <li>
+          <strong
+            data-pt="Linguagens:"
+            data-en="Languages:"
+          >
+            Linguagens:
+          </strong>
+
+          Python, C, Java, SQL
+        </li>
+
+
+        <li>
+          <strong
+            data-pt="Dados:"
+            data-en="Data:"
+          >
+            Dados:
+          </strong>
+
+          Pandas, Matplotlib, Geopandas, MySQL, Excel,
+          Power BI, análise estatística (PCA, SVD, K-Means)
+        </li>
+
+
+        <li>
+          <strong
+            data-pt="Web/Frameworks:"
+            data-en="Web/Frameworks:"
+          >
+            Web/Frameworks:
+          </strong>
+
+          Flask, Streamlit, HTML
+        </li>
+
+
+        <li>
+          <strong
+            data-pt="Ferramentas:"
+            data-en="Tools:"
+          >
+            Ferramentas:
+          </strong>
+
+          Git, GitHub
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- =========================
+         IDIOMAS
+    ========================== -->
+
+    <section
+      id="idiomas"
+      class="aba-conteudo"
+    >
+
+      <h3
+        data-pt="Idiomas"
+        data-en="Languages"
+      >
+        Idiomas
+      </h3>
+
+
+      <ul class="lista-competencias">
+
+        <li>
+
+          <strong
+            data-pt="Português:"
+            data-en="Portuguese:"
+          >
+            Português:
+          </strong>
+
+          Nativo
+
+        </li>
+
+
+        <li>
+
+          <strong
+            data-pt="Inglês:"
+            data-en="English:"
+          >
+            Inglês:
+          </strong>
+
+          Intermediário
+
+        </li>
+
+
+        <li>
+
+          <strong
+            data-pt="Espanhol:"
+            data-en="Spanish:"
+          >
+            Espanhol:
+          </strong>
+
+          Intermediário
+
+        </li>
+
+      </ul>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- =========================
+       RODAPÉ
+  ========================== -->
+
+  <footer>
+
+    <p>
+
+      <span
+        data-pt="Última atualização em"
+        data-en="Last updated on"
+      >
+        Última atualização em
+      </span>
+
+      <span id="data-atualizacao"></span>
+
+    </p>
+
+  </footer>
 
 
   <script src="script.js"></script>
