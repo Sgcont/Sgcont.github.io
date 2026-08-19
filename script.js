@@ -1,71 +1,141 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const botoesIdioma =
-    document.querySelectorAll(".idioma-botao");
+  /* =========================
+     ABAS
+  ========================= */
 
-  const paginasIdioma =
-    document.querySelectorAll(".idioma-conteudo");
+  const botoes = document.querySelectorAll(".aba-botao");
+  const conteudos = document.querySelectorAll(".aba-conteudo");
+
+  botoes.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+      const alvo = botao.getAttribute("data-aba");
+
+      botoes.forEach(function (b) {
+        b.classList.remove("ativo");
+      });
+
+      conteudos.forEach(function (c) {
+        c.classList.remove("ativo");
+      });
+
+      botao.classList.add("ativo");
+
+      const conteudo = document.getElementById(alvo);
+
+      if (conteudo) {
+        conteudo.classList.add("ativo");
+      }
+
+    });
+
+  });
 
 
   /* =========================
-     ABAS
-  ========================== */
+     TRADUÇÃO
+  ========================= */
 
-  function configurarAbas(container) {
-
-    const botoes =
-      container.querySelectorAll(".aba-botao");
-
-    const conteudos =
-      container.querySelectorAll(".aba-conteudo");
+  const botoesIdioma =
+    document.querySelectorAll(".idioma-botao");
 
 
-    botoes.forEach(function (botao) {
+  function traduzir(idioma) {
 
-      botao.addEventListener("click", function () {
-
-        const alvo =
-          botao.getAttribute("data-aba");
+    const elementos =
+      document.querySelectorAll("[data-pt][data-en]");
 
 
-        botoes.forEach(function (b) {
-          b.classList.remove("ativo");
-        });
+    elementos.forEach(function (elemento) {
+
+      if (idioma === "en") {
+
+        elemento.textContent =
+          elemento.getAttribute("data-en");
+
+      } else {
+
+        elemento.textContent =
+          elemento.getAttribute("data-pt");
+
+      }
+
+    });
 
 
-        conteudos.forEach(function (c) {
-          c.classList.remove("ativo");
-        });
+    /* Idioma do documento */
 
+    if (idioma === "en") {
+
+      document.documentElement.lang = "en";
+
+      document.title =
+        "Lucas de Araujo Contreiras | Computer Science";
+
+    } else {
+
+      document.documentElement.lang = "pt-br";
+
+      document.title =
+        "Lucas de Araujo Contreiras";
+
+    }
+
+
+    /* Botão ativo */
+
+    botoesIdioma.forEach(function (botao) {
+
+      botao.classList.remove("ativo");
+
+      if (
+        botao.getAttribute("data-idioma") === idioma
+      ) {
 
         botao.classList.add("ativo");
 
-
-        const conteudo =
-          document.getElementById(alvo);
-
-
-        if (conteudo) {
-          conteudo.classList.add("ativo");
-        }
-
-      });
+      }
 
     });
+
+
+    /* Salva idioma */
+
+    localStorage.setItem("idioma", idioma);
+
+
+    /* Atualiza data */
+
+    atualizarData(idioma);
 
   }
 
 
-  /* Configura as abas dos dois idiomas */
+  /* =========================
+     BOTÕES DE IDIOMA
+  ========================= */
 
-  paginasIdioma.forEach(function (pagina) {
-    configurarAbas(pagina);
+  botoesIdioma.forEach(function (botao) {
+
+    botao.addEventListener("click", function () {
+
+      const idioma =
+        botao.getAttribute("data-idioma");
+
+      if (idioma) {
+        traduzir(idioma);
+      }
+
+    });
+
   });
 
 
   /* =========================
      DATA
-  ========================== */
+  ========================= */
 
   const mesesPT = [
     "janeiro",
@@ -81,7 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "novembro",
     "dezembro"
   ];
-
 
   const mesesEN = [
     "January",
@@ -107,145 +176,59 @@ document.addEventListener("DOMContentLoaded", function () {
     const mes = hoje.getMonth();
     const ano = hoje.getFullYear();
 
+    let texto;
 
-    if (idioma === "pt") {
 
-      document.getElementById(
-        "data-atualizacao-pt"
-      ).textContent =
+    if (idioma === "en") {
+
+      texto =
+        monthsEN[mes] +
+        " " +
+        dia +
+        ", " +
+        ano;
+
+    } else {
+
+      texto =
         dia +
         " de " +
         mesesPT[mes] +
         " de " +
         ano;
 
-    } else {
+    }
 
-      document.getElementById(
-        "data-atualizacao-en"
-      ).textContent =
-        mesesEN[mes] +
-        " " +
-        dia +
-        ", " +
-        ano;
 
+    const elemento =
+      document.getElementById("data-atualizacao");
+
+    if (elemento) {
+      elemento.textContent = texto;
     }
 
   }
 
 
   /* =========================
-     TROCA DE IDIOMA
-  ========================== */
+     CORREÇÃO DO NOME DOS MESES
+  ========================= */
 
-  function mudarIdioma(idioma) {
+  /*
+     Mantemos mesesEN separado para evitar
+     qualquer problema com a tradução.
+  */
 
-
-    /* Esconde os dois idiomas */
-
-    paginasIdioma.forEach(function (pagina) {
-
-      pagina.style.display = "none";
-
-    });
-
-
-    /* Mostra o idioma escolhido */
-
-    const paginaSelecionada =
-      document.querySelector(
-        '[data-idioma-conteudo="' +
-        idioma +
-        '"]'
-      );
-
-
-    if (paginaSelecionada) {
-
-      paginaSelecionada.style.display = "block";
-
-    }
-
-
-    /* Atualiza botão */
-
-    botoesIdioma.forEach(function (botao) {
-
-      botao.classList.remove("ativo");
-
-
-      if (
-        botao.getAttribute("data-idioma") === idioma
-      ) {
-
-        botao.classList.add("ativo");
-
-      }
-
-    });
-
-
-    /* Atualiza título */
-
-    if (idioma === "en") {
-
-      document.title =
-        "Lucas de Araujo Contreiras | Computer Science";
-
-      document.documentElement.lang = "en";
-
-    } else {
-
-      document.title =
-        "Lucas de Araujo Contreiras";
-
-      document.documentElement.lang = "pt-br";
-
-    }
-
-
-    /* Atualiza data */
-
-    atualizarData(idioma);
-
-
-    /* Guarda idioma escolhido */
-
-    localStorage.setItem(
-      "idioma",
-      idioma
-    );
-
-  }
-
-
-  /* =========================
-     BOTÕES 🇧🇷 🇬🇧
-  ========================== */
-
-  botoesIdioma.forEach(function (botao) {
-
-    botao.addEventListener("click", function () {
-
-      const idioma =
-        botao.getAttribute("data-idioma");
-
-      mudarIdioma(idioma);
-
-    });
-
-  });
+  const monthsEN = mesesEN;
 
 
   /* =========================
      IDIOMA INICIAL
-  ========================== */
+  ========================= */
 
   const idiomaSalvo =
     localStorage.getItem("idioma") || "pt";
 
-
-  mudarIdioma(idiomaSalvo);
+  traduzir(idiomaSalvo);
 
 });
