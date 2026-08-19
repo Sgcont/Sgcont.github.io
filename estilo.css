@@ -13,7 +13,9 @@ body {
   padding: 30px 20px 60px 20px;
 }
 
-/* Idiomas */
+/* =========================
+   SELETOR DE IDIOMA
+========================= */
 
 #idiomas-seletor {
   display: flex;
@@ -41,7 +43,10 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Cabeçalho */
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header {
   border-bottom: 1px solid #cccccc;
@@ -102,7 +107,10 @@ h2 {
   text-decoration: underline;
 }
 
-/* Abas */
+
+/* =========================
+   ABAS
+========================= */
 
 #abas {
   display: flex;
@@ -137,7 +145,10 @@ h2 {
   border-bottom: 1px solid #ffffff;
 }
 
-/* Conteúdo */
+
+/* =========================
+   CONTEÚDO DAS ABAS
+========================= */
 
 .aba-conteudo {
   display: none;
@@ -183,6 +194,11 @@ h3 {
   margin-bottom: 4px;
 }
 
+
+/* =========================
+   LISTAS
+========================= */
+
 .lista-competencias {
   list-style: none;
   padding: 0;
@@ -193,15 +209,21 @@ h3 {
   margin-bottom: 8px;
 }
 
-/* Tabela de notas */
+
+/* =========================
+   TABELA DE NOTAS
+========================= */
 
 .tabela-notas-container {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
 }
 
 .tabela-notas {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -224,6 +246,11 @@ h3 {
   background-color: #fafafa;
 }
 
+.tabela-notas th,
+.tabela-notas td {
+  white-space: nowrap;
+}
+
 .tabela-notas .nota {
   font-weight: bold;
   text-align: center;
@@ -243,7 +270,10 @@ h3 {
   border-bottom: 1px solid #dddddd;
 }
 
-/* Resumo das notas */
+
+/* =========================
+   RESUMO DAS NOTAS
+========================= */
 
 .resumo-notas {
   display: flex;
@@ -270,7 +300,10 @@ h3 {
   color: #666666;
 }
 
-/* Rodapé */
+
+/* =========================
+   RODAPÉ
+========================= */
 
 footer {
   margin-top: 40px;
@@ -281,20 +314,28 @@ footer {
   text-align: center;
 }
 
-/* Responsivo */
+
+/* =========================
+   RESPONSIVO
+========================= */
 
 @media (max-width: 600px) {
+
   body {
-    padding: 20px 12px 40px 12px;
+    padding: 18px 12px 40px 12px;
+    font-size: 14px;
   }
 
   h1 {
     font-size: 22px;
   }
 
-  .aba-botao {
-    font-size: 12px;
-    padding: 6px 10px;
+  h2 {
+    font-size: 15px;
+  }
+
+  .subtitulo {
+    font-size: 13px;
   }
 
   .perfil-bloco {
@@ -311,12 +352,47 @@ footer {
     line-height: 1.7;
   }
 
+  #abas {
+    gap: 3px;
+  }
+
+  .aba-botao {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .tabela-notas-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .tabela-notas {
+    min-width: 600px;
     font-size: 12px;
   }
 
   .tabela-notas th,
   .tabela-notas td {
     padding: 6px;
+    white-space: nowrap;
   }
+
+  .periodo-notas {
+    font-size: 16px;
+  }
+
+  .resumo-notas {
+    gap: 8px;
+  }
+
+  .resumo-card {
+    min-width: 110px;
+    padding: 9px 11px;
+  }
+
 }
