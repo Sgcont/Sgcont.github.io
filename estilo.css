@@ -8,45 +8,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.55;
-  max-width: 900px;
+  max-width: 780px;
   margin: 0 auto;
   padding: 30px 20px 60px 20px;
 }
-
-/* =========================
-   SELETOR DE IDIOMA
-========================= */
-
-#idiomas-seletor {
-  display: flex;
-  justify-content: flex-end;
-  gap: 5px;
-  margin-bottom: 12px;
-}
-
-.idioma-botao {
-  background: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  padding: 4px 7px;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-}
-
-.idioma-botao:hover {
-  background-color: #f2f2f2;
-}
-
-.idioma-botao.ativo {
-  border-color: #777777;
-  background-color: #f2f2f2;
-}
-
-
-/* =========================
-   CABEÇALHO
-========================= */
 
 header {
   border-bottom: 1px solid #cccccc;
@@ -107,10 +72,7 @@ h2 {
   text-decoration: underline;
 }
 
-
-/* =========================
-   ABAS
-========================= */
+/* Abas */
 
 #abas {
   display: flex;
@@ -145,10 +107,7 @@ h2 {
   border-bottom: 1px solid #ffffff;
 }
 
-
-/* =========================
-   CONTEÚDO DAS ABAS
-========================= */
+/* Conteúdo das abas */
 
 .aba-conteudo {
   display: none;
@@ -194,11 +153,6 @@ h3 {
   margin-bottom: 4px;
 }
 
-
-/* =========================
-   LISTAS
-========================= */
-
 .lista-competencias {
   list-style: none;
   padding: 0;
@@ -209,102 +163,6 @@ h3 {
   margin-bottom: 8px;
 }
 
-
-/* =========================
-   TABELA DE NOTAS
-========================= */
-
-.tabela-notas-container {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 20px;
-}
-
-.tabela-notas {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-
-.tabela-notas th {
-  background-color: #f2f2f2;
-  color: #222222;
-  font-weight: bold;
-  text-align: left;
-  border-bottom: 2px solid #cccccc;
-  padding: 8px;
-}
-
-.tabela-notas td {
-  border-bottom: 1px solid #dddddd;
-  padding: 7px 8px;
-}
-
-.tabela-notas tr:hover {
-  background-color: #fafafa;
-}
-
-.tabela-notas th,
-.tabela-notas td {
-  white-space: nowrap;
-}
-
-.tabela-notas .nota {
-  font-weight: bold;
-  text-align: center;
-}
-
-.tabela-notas .aprovado {
-  color: #333333;
-  font-weight: bold;
-}
-
-.periodo-notas {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  margin-top: 26px;
-  margin-bottom: 8px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dddddd;
-}
-
-
-/* =========================
-   RESUMO DAS NOTAS
-========================= */
-
-.resumo-notas {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-.resumo-card {
-  border: 1px solid #dddddd;
-  padding: 10px 14px;
-  min-width: 130px;
-  background-color: #fafafa;
-}
-
-.resumo-card strong {
-  display: block;
-  font-size: 18px;
-  color: #111111;
-}
-
-.resumo-card span {
-  font-size: 12px;
-  color: #666666;
-}
-
-
-/* =========================
-   RODAPÉ
-========================= */
-
 footer {
   margin-top: 40px;
   border-top: 1px solid #dddddd;
@@ -314,85 +172,29 @@ footer {
   text-align: center;
 }
 
+footer p + p {
+  margin-top: 4px;
+}
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* Responsivo */
 
 @media (max-width: 600px) {
-
-  body {
-    padding: 18px 12px 40px 12px;
-    font-size: 14px;
-  }
-
   h1 {
     font-size: 22px;
   }
-
-  h2 {
-    font-size: 15px;
+  .aba-botao {
+    font-size: 12px;
+    padding: 6px 10px;
   }
-
-  .subtitulo {
-    font-size: 13px;
-  }
-
   .perfil-bloco {
     gap: 12px;
   }
-
   .foto-perfil {
     width: 90px;
     height: 115px;
   }
-
   .contato {
     font-size: 12px;
     line-height: 1.7;
   }
-
-  #abas {
-    gap: 3px;
-  }
-
-  .aba-botao {
-    font-size: 12px;
-    padding: 7px 9px;
-  }
-
-  h3 {
-    font-size: 18px;
-  }
-
-  .tabela-notas-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .tabela-notas {
-    min-width: 600px;
-    font-size: 12px;
-  }
-
-  .tabela-notas th,
-  .tabela-notas td {
-    padding: 6px;
-    white-space: nowrap;
-  }
-
-  .periodo-notas {
-    font-size: 16px;
-  }
-
-  .resumo-notas {
-    gap: 8px;
-  }
-
-  .resumo-card {
-    min-width: 110px;
-    padding: 9px 11px;
-  }
-
 }
