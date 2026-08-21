@@ -208,13 +208,11 @@ h3 {
 .tabela-notas-container {
   width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .tabela-notas {
   width: 100%;
-  min-width: 520px;
   border-collapse: collapse;
   font-size: 13px;
 }
@@ -245,7 +243,6 @@ h3 {
 .tabela-notas .aprovado {
   color: #333333;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 .periodo-notas {
@@ -258,7 +255,7 @@ h3 {
 }
 
 /* =========================
-   RESUMO DAS NOTAS
+   RESUMO DO HISTÓRICO
 ========================= */
 
 .resumo-notas {
@@ -317,10 +314,6 @@ footer p + p {
     font-size: 22px;
   }
 
-  h2 {
-    font-size: 14px;
-  }
-
   .aba-botao {
     font-size: 12px;
     padding: 6px 10px;
@@ -349,7 +342,16 @@ footer p + p {
     padding: 6px;
   }
 
+  .periodo-notas {
+    font-size: 16px;
+  }
+
   .resumo-card {
     min-width: 110px;
+    padding: 8px 10px;
+  }
+
+  .resumo-card strong {
+    font-size: 16px;
   }
 }
