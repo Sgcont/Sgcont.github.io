@@ -1,200 +1,79 @@
-* {
-  box-sizing: border-box;
-}
+/* =========================
+   TABELA DE NOTAS
+========================= */
 
-body {
-  background-color: #ffffff;
-  color: #222222;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
-  max-width: 780px;
-  margin: 0 auto;
-  padding: 30px 20px 60px 20px;
-}
-
-header {
-  border-bottom: 1px solid #cccccc;
-  padding-bottom: 16px;
-  margin-bottom: 20px;
-}
-
-.perfil-bloco {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+.tabela-notas-container {
+  width: 100%;
+  overflow-x: auto;
   margin-bottom: 24px;
 }
 
-.foto-perfil {
-  width: 130px;
-  height: 165px;
-  object-fit: cover;
-  border: 1px solid #999999;
-  flex-shrink: 0;
-}
-
-h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 28px;
-  margin: 0 0 4px 0;
-  color: #111111;
-}
-
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: normal;
-  font-style: italic;
-  font-size: 16px;
-  margin: 0 0 2px 0;
-  color: #444444;
-}
-
-.subtitulo {
-  margin: 0;
-  font-size: 14px;
-  color: #555555;
-}
-
-.contato {
+.tabela-notas {
+  width: 100%;
+  border-collapse: collapse;
   font-size: 13px;
-  color: #444444;
-  line-height: 1.9;
-  padding-top: 4px;
 }
 
-.contato a {
-  color: #1a4fa0;
-  text-decoration: none;
-}
-
-.contato a:hover {
-  text-decoration: underline;
-}
-
-/* Abas */
-
-#abas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  border-bottom: 1px solid #cccccc;
-  margin-bottom: 24px;
-}
-
-.aba-botao {
-  background: none;
-  border: 1px solid #cccccc;
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  padding: 8px 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #444444;
-  cursor: pointer;
-  margin-bottom: -1px;
-}
-
-.aba-botao:hover {
+.tabela-notas th {
   background-color: #f2f2f2;
-}
-
-.aba-botao.ativo {
-  background-color: #ffffff;
-  border-color: #999999;
-  color: #111111;
+  color: #222222;
   font-weight: bold;
-  border-bottom: 1px solid #ffffff;
+  text-align: left;
+  border-bottom: 2px solid #cccccc;
+  padding: 8px;
 }
 
-/* Conteúdo das abas */
-
-.aba-conteudo {
-  display: none;
-}
-
-.aba-conteudo.ativo {
-  display: block;
-}
-
-h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 19px;
-  color: #111111;
+.tabela-notas td {
   border-bottom: 1px solid #dddddd;
-  padding-bottom: 6px;
-  margin-top: 0;
-  margin-bottom: 16px;
+  padding: 7px 8px;
 }
 
-.item {
-  margin-bottom: 18px;
+.tabela-notas tr:hover {
+  background-color: #fafafa;
 }
 
-.item h4 {
-  font-size: 15px;
-  margin: 0 0 2px 0;
-  color: #111111;
-}
-
-.item .meta {
-  font-style: italic;
-  font-size: 13px;
-  color: #666666;
-  margin: 0 0 6px 0;
-}
-
-.item ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.item li {
-  margin-bottom: 4px;
-}
-
-.lista-competencias {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.lista-competencias li {
-  margin-bottom: 8px;
-}
-
-footer {
-  margin-top: 40px;
-  border-top: 1px solid #dddddd;
-  padding-top: 12px;
-  font-size: 12px;
-  color: #888888;
+.tabela-notas .nota {
+  font-weight: bold;
   text-align: center;
 }
 
-footer p + p {
-  margin-top: 4px;
+.tabela-notas .aprovado {
+  color: #333333;
+  font-weight: bold;
 }
 
-/* Responsivo */
+.periodo-notas {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  margin-top: 26px;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dddddd;
+}
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 22px;
-  }
-  .aba-botao {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-  .perfil-bloco {
-    gap: 12px;
-  }
-  .foto-perfil {
-    width: 90px;
-    height: 115px;
-  }
-  .contato {
-    font-size: 12px;
-    line-height: 1.7;
-  }
+/* Resumo do histórico */
+
+.resumo-notas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.resumo-card {
+  border: 1px solid #dddddd;
+  padding: 10px 14px;
+  min-width: 130px;
+  background-color: #fafafa;
+}
+
+.resumo-card strong {
+  display: block;
+  font-size: 18px;
+  color: #111111;
+}
+
+.resumo-card span {
+  font-size: 12px;
+  color: #666666;
 }
