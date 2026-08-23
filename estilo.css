@@ -255,7 +255,7 @@ h3 {
 }
 
 /* =========================
-   RESUMO DO HISTÓRICO
+   RESUMO DAS NOTAS
 ========================= */
 
 .resumo-notas {
@@ -281,6 +281,167 @@ h3 {
 .resumo-card span {
   font-size: 12px;
   color: #666666;
+}
+
+/* =========================
+   DIVERSÃO
+========================= */
+
+.diversao-bloco {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.diversao-bloco:last-child {
+  border-bottom: none;
+}
+
+.diversao-bloco h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  margin: 0 0 8px 0;
+  color: #111111;
+}
+
+.diversao-bloco h5 {
+  font-size: 15px;
+  margin: 18px 0 6px 0;
+  color: #222222;
+}
+
+.diversao-bloco p {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.lista-jogos,
+.lista-artistas {
+  margin-top: 6px;
+  padding-left: 22px;
+}
+
+.lista-jogos li,
+.lista-artistas li {
+  margin-bottom: 5px;
+}
+
+.lista-perfis {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lista-perfis li {
+  margin-bottom: 6px;
+}
+
+.diversao-bloco a {
+  color: #1a4fa0;
+  text-decoration: none;
+}
+
+.diversao-bloco a:hover {
+  text-decoration: underline;
+}
+
+.futuro-jogos {
+  margin-top: 25px;
+  padding: 12px 14px;
+  border: 1px dashed #cccccc;
+  background-color: #fafafa;
+}
+
+.futuro-jogos h5 {
+  margin-top: 0;
+}
+
+/* =========================
+   CAMPO MINADO
+========================= */
+
+#python-status {
+  margin: 12px 0;
+  padding: 8px 10px;
+  border: 1px solid #dddddd;
+  background-color: #fafafa;
+  font-size: 13px;
+  color: #666666;
+}
+
+#campo-minado {
+  margin-top: 15px;
+}
+
+#minesweeper-info {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #555555;
+}
+
+#minesweeper-tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(10, 32px);
+  grid-template-rows: repeat(10, 32px);
+  gap: 2px;
+  width: max-content;
+  margin-bottom: 12px;
+}
+
+.celula-mina {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid #aaaaaa;
+  background-color: #eeeeee;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.celula-mina:hover {
+  background-color: #dddddd;
+}
+
+.celula-mina.revelada {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  cursor: default;
+}
+
+.celula-mina.bomba {
+  background-color: #eeeeee;
+}
+
+.celula-mina.bandeira {
+  background-color: #eeeeee;
+}
+
+.jogo-botao {
+  background-color: #ffffff;
+  border: 1px solid #aaaaaa;
+  border-radius: 4px;
+  padding: 7px 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333333;
+  cursor: pointer;
+}
+
+.jogo-botao:hover:not(:disabled) {
+  background-color: #f2f2f2;
+}
+
+.jogo-botao:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+#minesweeper-mensagem {
+  min-height: 22px;
+  font-weight: bold;
 }
 
 /* =========================
@@ -354,4 +515,22 @@ footer p + p {
   .resumo-card strong {
     font-size: 16px;
   }
+
+  /*
+     No celular, o Campo Minado fica
+     menor para caber na tela.
+  */
+
+  #minesweeper-tabuleiro {
+    grid-template-columns: repeat(10, 26px);
+    grid-template-rows: repeat(10, 26px);
+    gap: 1px;
+  }
+
+  .celula-mina {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
 }
