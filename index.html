@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lucas de Araujo Contreiras</title>
+  <title>Lucas de Araujo Contreiras</title>
 
-<link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-<!-- =========================
-     IDIOMAS
-========================= -->
-
-<div id="idiomas-seletor">
-
-  <button
-    class="idioma-botao ativo"
-    data-idioma="pt"
-    title="Português">
-    🇧🇷
-  </button>
-
-  <button
-    class="idioma-botao"
-    data-idioma="en"
-    title="English">
-    🇬🇧
-  </button>
-
-</div>
-
-
-<!-- =========================
-     CABEÇALHO
-========================= -->
-
 <header>
+
+  <!-- Idiomas -->
+  <div id="idiomas-seletor">
+    <button
+      class="idioma-botao ativo"
+      data-idioma="pt"
+      type="button">
+      🇧🇷
+    </button>
+
+    <button
+      class="idioma-botao"
+      data-idioma="en"
+      type="button">
+      🇬🇧
+    </button>
+  </div>
 
   <h1>Lucas de Araujo Contreiras</h1>
 
@@ -67,6 +58,7 @@
   <button
     class="aba-botao ativo"
     data-aba="objetivo"
+    type="button"
     data-pt="Objetivo"
     data-en="Objective">
     Objetivo
@@ -75,6 +67,7 @@
   <button
     class="aba-botao"
     data-aba="formacao"
+    type="button"
     data-pt="Formação"
     data-en="Education">
     Formação
@@ -83,6 +76,7 @@
   <button
     class="aba-botao"
     data-aba="projetos"
+    type="button"
     data-pt="Projetos"
     data-en="Projects">
     Projetos
@@ -91,6 +85,7 @@
   <button
     class="aba-botao"
     data-aba="notas"
+    type="button"
     data-pt="Notas"
     data-en="Grades">
     Notas
@@ -99,6 +94,7 @@
   <button
     class="aba-botao"
     data-aba="voluntario"
+    type="button"
     data-pt="Trabalho Voluntário"
     data-en="Volunteer Work">
     Trabalho Voluntário
@@ -107,6 +103,7 @@
   <button
     class="aba-botao"
     data-aba="cursos"
+    type="button"
     data-pt="Cursos"
     data-en="Courses">
     Cursos
@@ -115,6 +112,7 @@
   <button
     class="aba-botao"
     data-aba="competencias"
+    type="button"
     data-pt="Competências"
     data-en="Skills">
     Competências
@@ -123,6 +121,7 @@
   <button
     class="aba-botao"
     data-aba="idiomas"
+    type="button"
     data-pt="Idiomas"
     data-en="Languages">
     Idiomas
@@ -131,6 +130,7 @@
   <button
     class="aba-botao"
     data-aba="diversao"
+    type="button"
     data-pt="Diversão"
     data-en="Fun">
     Diversão
@@ -162,13 +162,15 @@
 
     <a
       href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
-      target="_blank">
+      target="_blank"
+      rel="noopener noreferrer">
       LinkedIn
     </a><br>
 
     <a
       href="https://github.com/Sgcont"
-      target="_blank">
+      target="_blank"
+      rel="noopener noreferrer">
       GitHub
     </a>
 
@@ -179,13 +181,12 @@
 
 <main>
 
+
 <!-- =========================
      OBJETIVO
 ========================= -->
 
-<section
-  id="objetivo"
-  class="aba-conteudo ativo">
+<section id="objetivo" class="aba-conteudo ativo">
 
   <h3
     data-pt="Objetivo"
@@ -209,13 +210,11 @@
      FORMAÇÃO
 ========================= -->
 
-<section
-  id="formacao"
-  class="aba-conteudo">
+<section id="formacao" class="aba-conteudo">
 
   <h3
     data-pt="Formação Acadêmica"
-    data-en="Academic Education">
+    data-en="Academic Background">
     Formação Acadêmica
   </h3>
 
@@ -251,9 +250,7 @@
      PROJETOS
 ========================= -->
 
-<section
-  id="projetos"
-  class="aba-conteudo">
+<section id="projetos" class="aba-conteudo">
 
   <h3
     data-pt="Projetos"
@@ -275,15 +272,14 @@
     <ul>
 
       <li>
-        Programa desenvolvido em C para analisar o banco de dados Iris e
-        treinar um modelo capaz de classificar a espécie de uma flor a
-        partir das medidas de pétalas e sépalas.
+        Programa desenvolvido em C para analisar o banco de dados Iris
+        e treinar um modelo capaz de classificar a espécie de uma flor
+        a partir das medidas de pétalas e sépalas.
       </li>
 
       <li>
-        Implementação de algoritmo de classificação do zero, sem bibliotecas
-        de alto nível, reforçando o entendimento dos fundamentos matemáticos
-        por trás do aprendizado de máquina.
+        Implementação de algoritmo de classificação do zero,
+        sem bibliotecas de alto nível.
       </li>
 
     </ul>
@@ -304,17 +300,17 @@
     <ul>
 
       <li>
-        Análise exploratória de dados de um dataset com os 1000 filmes mais
-        bem avaliados do IMDB.
+        Análise exploratória de dados de um dataset com os
+        1000 filmes mais bem avaliados do IMDB.
       </li>
 
       <li>
-        Criação de visualizações estatísticas com Matplotlib e construção
-        de dashboard interativo em Streamlit.
+        Criação de visualizações estatísticas com Matplotlib
+        e dashboard interativo em Streamlit.
       </li>
 
       <li>
-        Versionamento do projeto com Git/GitHub.
+        Versionamento utilizando Git e GitHub.
       </li>
 
     </ul>
@@ -329,26 +325,24 @@
     </h4>
 
     <p class="meta">
-      Python, SVD, PCA, K-Means — COCADA
+      Python, SVD, PCA, K-Means
     </p>
 
     <ul>
 
       <li>
-        Aplicação de SVD e PCA sobre dados de criminalidade do ISP-RJ.
+        Aplicação de SVD e PCA sobre dados de criminalidade
+        do Instituto de Segurança Pública do Rio de Janeiro.
       </li>
 
       <li>
-        Uso de K-Means para agrupamento de regiões com padrões semelhantes.
+        Uso de K-Means para agrupamento de regiões com padrões
+        de criminalidade semelhantes.
       </li>
 
       <li>
-        Construção de visualizações para identificar tendências e padrões
-        espaciais.
-      </li>
-
-      <li>
-        Versionamento com Git/GitHub em colaboração com o grupo.
+        Construção de visualizações para identificar padrões
+        espaciais de criminalidade.
       </li>
 
     </ul>
@@ -363,29 +357,28 @@
     </h4>
 
     <p class="meta">
-      SQL, MySQL, Python (Geopandas), HTML — Banco de Dados I
+      SQL, MySQL, Python, Geopandas, HTML
     </p>
 
     <ul>
 
       <li>
-        Modelagem e implementação de banco de dados relacional em MySQL.
+        Modelagem e implementação de banco de dados relacional
+        correlacionando dados GTFS de transporte público com
+        informações demográficas.
       </li>
 
       <li>
-        Desenvolvimento de consultas SQL com joins, subqueries e agregações.
+        Desenvolvimento de consultas SQL para determinar regiões
+        com maior oferta de transporte.
       </li>
 
       <li>
-        Aplicação web em Flask com mapa interativo.
+        Construção de aplicação web com Flask e mapa interativo.
       </li>
 
       <li>
         Uso de Geopandas para tratamento de dados geoespaciais.
-      </li>
-
-      <li>
-        Colaboração via Git/GitHub com branches, merges e pull requests.
       </li>
 
     </ul>
@@ -399,58 +392,36 @@
      NOTAS
 ========================= -->
 
-<section
-  id="notas"
-  class="aba-conteudo">
+<section id="notas" class="aba-conteudo">
 
   <h3
     data-pt="Histórico Acadêmico"
-    data-en="Academic History">
+    data-en="Academic Record">
     Histórico Acadêmico
   </h3>
 
   <div class="resumo-notas">
 
     <div class="resumo-card">
-
       <strong>8,4</strong>
-
-      <span
-        data-pt="CR atual"
-        data-en="Current GPA">
-        CR atual
-      </span>
-
+      <span>CR atual</span>
     </div>
 
-
     <div class="resumo-card">
-
       <strong>UFRJ</strong>
-
-      <span
-        data-pt="Instituição"
-        data-en="Institution">
-        Instituição
-      </span>
-
+      <span>Instituição</span>
     </div>
 
   </div>
 
-
-  <p
-    data-pt="Histórico acadêmico organizado por período."
-    data-en="Academic history organized by semester.">
+  <p>
     Histórico acadêmico organizado por período.
   </p>
 
-
   <!--
-    MANTENHA AQUI A SUA TABELA DE DISCIPLINAS
-    QUE VOCÊ JÁ POSSUI NO SEU SITE.
-
-    A nova aba Diversão não interfere nas notas.
+    Suas disciplinas podem continuar aqui.
+    Não alterei essa parte porque as notas/matérias
+    completas não estão neste código enviado agora.
   -->
 
 </section>
@@ -460,9 +431,7 @@
      TRABALHO VOLUNTÁRIO
 ========================= -->
 
-<section
-  id="voluntario"
-  class="aba-conteudo">
+<section id="voluntario" class="aba-conteudo">
 
   <h3
     data-pt="Trabalho Voluntário"
@@ -483,12 +452,13 @@
     <ul>
 
       <li>
-        Controle e análise em Excel da chegada de alimentos doados.
+        Controle e análise em Excel da chegada de alimentos
+        doados à instituição.
       </li>
 
       <li>
-        Criação de painel em Power BI para visualização e acompanhamento
-        dos dados de doações.
+        Criação de painel em Power BI para visualização
+        e acompanhamento dos dados de doações.
       </li>
 
     </ul>
@@ -502,9 +472,7 @@
      CURSOS
 ========================= -->
 
-<section
-  id="cursos"
-  class="aba-conteudo">
+<section id="cursos" class="aba-conteudo">
 
   <h3
     data-pt="Cursos e Atividades Complementares"
@@ -514,18 +482,20 @@
 
   <article class="item">
 
-    <h4>For_code</h4>
+    <h4>
+      For_code
+    </h4>
 
     <ul>
 
       <li>
-        Desenvolvimento de exercícios e scripts práticos em Python e SQL
-        nos minicursos de Análise de Dados.
+        Desenvolvimento de exercícios e scripts práticos
+        em Python e SQL.
       </li>
 
       <li>
-        Atuação como instrutor, ensinando conceitos de LGPD e orientando
-        a aplicação prática dos conteúdos em Notion.
+        Atuação como instrutor, ensinando conceitos de LGPD
+        e orientando a aplicação prática dos conteúdos.
       </li>
 
     </ul>
@@ -539,9 +509,7 @@
      COMPETÊNCIAS
 ========================= -->
 
-<section
-  id="competencias"
-  class="aba-conteudo">
+<section id="competencias" class="aba-conteudo">
 
   <h3
     data-pt="Competências Técnicas"
@@ -558,8 +526,8 @@
 
     <li>
       <strong>Dados:</strong>
-      Pandas, Matplotlib, Geopandas, MySQL, Excel, Power BI,
-      PCA, SVD, K-Means
+      Pandas, Matplotlib, Geopandas, MySQL,
+      Excel, Power BI, análise estatística
     </li>
 
     <li>
@@ -581,9 +549,7 @@
      IDIOMAS
 ========================= -->
 
-<section
-  id="idiomas"
-  class="aba-conteudo">
+<section id="idiomas" class="aba-conteudo">
 
   <h3
     data-pt="Idiomas"
@@ -617,9 +583,7 @@
      DIVERSÃO
 ========================= -->
 
-<section
-  id="diversao"
-  class="aba-conteudo">
+<section id="diversao" class="aba-conteudo">
 
   <h3
     data-pt="Diversão"
@@ -627,152 +591,100 @@
     Diversão
   </h3>
 
-
   <p
-    data-pt="Um espaço mais pessoal do meu site, reunindo jogos, plataformas que uso, jogos que gosto e algumas coisas que pretendo colocar aqui no futuro."
-    data-en="A more personal part of my website, bringing together games, platforms I use, games I enjoy and some things I plan to add here in the future.">
-    Um espaço mais pessoal do meu site, reunindo jogos, plataformas que uso,
-    jogos que gosto e algumas coisas que pretendo colocar aqui no futuro.
+    class="diversao-intro"
+    data-pt="Um pequeno espaço para as coisas que eu gosto fora da programação."
+    data-en="A small space for the things I enjoy outside programming.">
+    Um pequeno espaço para as coisas que eu gosto fora da programação.
   </p>
 
 
   <!-- =========================
-       STEAM
+       PERFIS
   ========================= -->
 
-  <article class="diversao-bloco">
-
-    <h4
-      data-pt="Steam"
-      data-en="Steam">
-      Steam
-    </h4>
-
-    <p>
-
-      <a
-        href="https://steamcommunity.com/profiles/76561198041276973/"
-        target="_blank">
-
-        <span
-          data-pt="Meu perfil na Steam — Ignoto"
-          data-en="My Steam profile — Ignoto">
-          Meu perfil na Steam — Ignoto
-        </span>
-
-      </a>
-
-    </p>
+  <div class="diversao-galeria">
 
 
-    <p
-      data-pt="Meus jogos favoritos:"
-      data-en="My favorite games:">
-      Meus jogos favoritos:
-    </p>
+    <!-- STEAM -->
 
-    <ol class="lista-jogos">
+    <a
+      class="diversao-card"
+      href="https://steamcommunity.com/profiles/76561198041276973/"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <li>Psychonauts 1</li>
-      <li>Psychonauts 2</li>
-      <li>Dark Souls Remastered</li>
-      <li>Dark Souls 3</li>
-      <li>Elden Ring</li>
-      <li>Quantum Break</li>
+      <img
+        src="steam.jpg"
+        alt="Perfil Steam de Ignoto">
 
-    </ol>
-
-  </article>
+    </a>
 
 
-  <!-- =========================
-       LAST.FM
-  ========================= -->
+    <!-- LAST.FM -->
 
-  <article class="diversao-bloco">
+    <a
+      class="diversao-card"
+      href="https://www.last.fm/user/Sgcont"
+      target="_blank"
+      rel="noopener noreferrer">
 
-    <h4>Last.fm</h4>
+      <img
+        src="lastfm.jpg"
+        alt="Perfil Last.fm de Sgcont">
 
-    <p>
-
-      <a
-        href="https://www.last.fm/user/Sgcont"
-        target="_blank">
-
-        <span
-          data-pt="Meu perfil no Last.fm"
-          data-en="My Last.fm profile">
-          Meu perfil no Last.fm
-        </span>
-
-      </a>
-
-    </p>
+    </a>
 
 
-    <p
-      data-pt="Artistas que tenho mais ouvido recentemente:"
-      data-en="Artists I have been listening to the most recently:">
-      Artistas que tenho mais ouvido recentemente:
-    </p>
+    <!-- LETTERBOXD -->
 
-    <ol class="lista-artistas">
+    <a
+      class="diversao-card"
+      href="https://boxd.it/6EtJf"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      <li>Red Hot Chili Peppers</li>
-      <li>Nickelback</li>
-      <li>System of a Down</li>
-      <li>Radiohead</li>
-      <li>Fresno</li>
+      <img
+        src="letterboxd.jpg"
+        alt="Perfil Letterboxd">
 
-    </ol>
+    </a>
 
-  </article>
+  </div>
 
 
   <!-- =========================
        OUTROS PERFIS
   ========================= -->
 
-  <article class="diversao-bloco">
+  <div class="diversao-links">
 
-    <h4
-      data-pt="Outros perfis"
-      data-en="Other profiles">
-      Outros perfis
-    </h4>
+    <a
+      href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
+      target="_blank"
+      rel="noopener noreferrer">
 
-    <ul class="lista-perfis">
+      LinkedIn
 
-      <li>
+    </a>
 
-        <a
-          href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
-          target="_blank">
-          LinkedIn
-        </a>
+    <a
+      href="http://lattes.cnpq.br/5677485666450221"
+      target="_blank"
+      rel="noopener noreferrer">
 
-      </li>
+      Currículo Lattes
 
-      <li>
+    </a>
 
-        <a
-          href="http://lattes.cnpq.br/5677485666450221"
-          target="_blank">
-          Currículo Lattes
-        </a>
-
-      </li>
-
-    </ul>
-
-  </article>
+  </div>
 
 
   <!-- =========================
-       MINIJOGOS
+       MINI JOGOS
   ========================= -->
 
-  <article class="diversao-bloco">
+  <div class="minijogos">
 
     <h4
       data-pt="Minijogos"
@@ -780,92 +692,41 @@
       Minijogos
     </h4>
 
+    <div class="jogo-futuro">
 
-    <h5
-      data-pt="Campo Minado"
-      data-en="Minesweeper">
-      Campo Minado
-    </h5>
-
-
-    <p
-      data-pt="Campo Minado 10×10 com 20 bombas. Este jogo é executado em Python diretamente no navegador através do Pyodide."
-      data-en="10×10 Minesweeper with 20 mines. This game runs in Python directly in the browser through Pyodide.">
-      Campo Minado 10×10 com 20 bombas. Este jogo é executado em Python
-      diretamente no navegador através do Pyodide.
-    </p>
-
-
-    <div id="python-status">
-
-      <span
-        data-pt="Carregando Python..."
-        data-en="Loading Python...">
-        Carregando Python...
-      </span>
-
-    </div>
-
-
-    <div id="campo-minado">
-
-      <div id="minesweeper-info">
-
-        <span
-          id="mines-restantes">
-          20
-        </span>
-
-        <span
-          data-pt="bombas restantes"
-          data-en="mines remaining">
-          bombas restantes
-        </span>
-
-      </div>
-
-
-      <div
-        id="minesweeper-tabuleiro">
-      </div>
-
-
-      <button
-        id="novo-jogo"
-        class="jogo-botao"
-        type="button"
-        disabled
-        data-pt="Novo jogo"
-        data-en="New game">
-        Novo jogo
-      </button>
-
+      <strong>
+        Campo Minado
+      </strong>
 
       <p
-        id="minesweeper-mensagem">
+        data-pt="Em breve: uma versão de Campo Minado desenvolvida em Python para rodar diretamente no navegador."
+        data-en="Coming soon: a Minesweeper game developed in Python to run directly in the browser.">
+        Em breve: uma versão de Campo Minado desenvolvida
+        em Python para rodar diretamente no navegador.
       </p>
 
     </div>
 
 
-    <div class="futuro-jogos">
+    <div class="jogo-futuro">
 
-      <h5
-        data-pt="No futuro..."
-        data-en="Coming in the future...">
-        No futuro...
-      </h5>
+      <strong>
+        Mais jogos
+      </strong>
 
       <p
-        data-pt="Mais jogos que fiz na GDP, incluindo projetos em que participei como roteirista."
-        data-en="More games I worked on at GDP, including projects where I participated as a writer.">
-        Mais jogos que fiz na GDP, incluindo projetos em que participei
-        como roteirista.
+        data-pt="Futuramente, outros jogos desenvolvidos na GDP, incluindo projetos em que participei como roteirista."
+        data-en="More games coming in the future, including projects developed at GDP where I participated as a writer.">
+        Futuramente, outros jogos desenvolvidos na GDP,
+        incluindo projetos em que participei como roteirista.
       </p>
 
     </div>
 
-  </article>
+  </div>
+
+</section>
+
 
 </main>
 
@@ -885,9 +746,6 @@
 
 </footer>
 
-
-<!-- Pyodide -->
-<script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
 
 <script src="script.js"></script>
 
