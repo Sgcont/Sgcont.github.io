@@ -13,6 +13,7 @@ body {
   padding: 30px 20px 60px 20px;
 }
 
+
 /* =========================
    IDIOMAS
 ========================= */
@@ -43,6 +44,7 @@ body {
   background-color: #f2f2f2;
 }
 
+
 /* =========================
    CABEÇALHO
 ========================= */
@@ -51,21 +53,6 @@ header {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 16px;
   margin-bottom: 20px;
-}
-
-.perfil-bloco {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 24px;
-}
-
-.foto-perfil {
-  width: 130px;
-  height: 165px;
-  object-fit: cover;
-  border: 1px solid #999999;
-  flex-shrink: 0;
 }
 
 h1 {
@@ -90,6 +77,26 @@ h2 {
   color: #555555;
 }
 
+
+/* =========================
+   PERFIL
+========================= */
+
+.perfil-bloco {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.foto-perfil {
+  width: 130px;
+  height: 165px;
+  object-fit: cover;
+  border: 1px solid #999999;
+  flex-shrink: 0;
+}
+
 .contato {
   font-size: 13px;
   color: #444444;
@@ -105,6 +112,7 @@ h2 {
 .contato a:hover {
   text-decoration: underline;
 }
+
 
 /* =========================
    ABAS
@@ -142,6 +150,7 @@ h2 {
   font-weight: bold;
   border-bottom: 1px solid #ffffff;
 }
+
 
 /* =========================
    CONTEÚDO DAS ABAS
@@ -191,6 +200,11 @@ h3 {
   margin-bottom: 4px;
 }
 
+
+/* =========================
+   COMPETÊNCIAS
+========================= */
+
 .lista-competencias {
   list-style: none;
   padding: 0;
@@ -200,6 +214,7 @@ h3 {
 .lista-competencias li {
   margin-bottom: 8px;
 }
+
 
 /* =========================
    TABELA DE NOTAS
@@ -254,6 +269,7 @@ h3 {
   border-bottom: 1px solid #dddddd;
 }
 
+
 /* =========================
    RESUMO DAS NOTAS
 ========================= */
@@ -283,166 +299,110 @@ h3 {
   color: #666666;
 }
 
+
 /* =========================
    DIVERSÃO
 ========================= */
 
-.diversao-bloco {
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 20px;
-  margin-bottom: 24px;
+.diversao-intro {
+  color: #555555;
+  margin-top: -4px;
+  margin-bottom: 22px;
 }
 
-.diversao-bloco:last-child {
-  border-bottom: none;
+
+/* Galeria das imagens */
+
+.diversao-galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
 }
 
-.diversao-bloco h4 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  margin: 0 0 8px 0;
-  color: #111111;
-}
 
-.diversao-bloco h5 {
-  font-size: 15px;
-  margin: 18px 0 6px 0;
-  color: #222222;
-}
+/* Cada imagem */
 
-.diversao-bloco p {
-  margin-top: 6px;
-  margin-bottom: 10px;
-}
-
-.lista-jogos,
-.lista-artistas {
-  margin-top: 6px;
-  padding-left: 22px;
-}
-
-.lista-jogos li,
-.lista-artistas li {
-  margin-bottom: 5px;
-}
-
-.lista-perfis {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.lista-perfis li {
-  margin-bottom: 6px;
-}
-
-.diversao-bloco a {
-  color: #1a4fa0;
-  text-decoration: none;
-}
-
-.diversao-bloco a:hover {
-  text-decoration: underline;
-}
-
-.futuro-jogos {
-  margin-top: 25px;
-  padding: 12px 14px;
-  border: 1px dashed #cccccc;
-  background-color: #fafafa;
-}
-
-.futuro-jogos h5 {
-  margin-top: 0;
-}
-
-/* =========================
-   CAMPO MINADO
-========================= */
-
-#python-status {
-  margin: 12px 0;
-  padding: 8px 10px;
+.diversao-card {
+  display: block;
   border: 1px solid #dddddd;
   background-color: #fafafa;
-  font-size: 13px;
-  color: #666666;
+  padding: 6px;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-#campo-minado {
-  margin-top: 15px;
+.diversao-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 }
 
-#minesweeper-info {
-  margin-bottom: 10px;
-  font-size: 13px;
-  color: #555555;
+.diversao-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
-#minesweeper-tabuleiro {
-  display: grid;
-  grid-template-columns: repeat(10, 32px);
-  grid-template-rows: repeat(10, 32px);
-  gap: 2px;
-  width: max-content;
-  margin-bottom: 12px;
+
+/* Links externos */
+
+.diversao-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.celula-mina {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: 1px solid #aaaaaa;
-  background-color: #eeeeee;
-  color: #222222;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-}
-
-.celula-mina:hover {
-  background-color: #dddddd;
-}
-
-.celula-mina.revelada {
-  background-color: #ffffff;
-  border-color: #dddddd;
-  cursor: default;
-}
-
-.celula-mina.bomba {
-  background-color: #eeeeee;
-}
-
-.celula-mina.bandeira {
-  background-color: #eeeeee;
-}
-
-.jogo-botao {
-  background-color: #ffffff;
-  border: 1px solid #aaaaaa;
-  border-radius: 4px;
+.diversao-links a {
+  border: 1px solid #cccccc;
   padding: 7px 12px;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #1a4fa0;
+  text-decoration: none;
   font-size: 13px;
-  color: #333333;
-  cursor: pointer;
+  border-radius: 4px;
 }
 
-.jogo-botao:hover:not(:disabled) {
+.diversao-links a:hover {
   background-color: #f2f2f2;
 }
 
-.jogo-botao:disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
+
+/* =========================
+   MINI JOGOS
+========================= */
+
+.minijogos {
+  margin-top: 20px;
 }
 
-#minesweeper-mensagem {
-  min-height: 22px;
-  font-weight: bold;
+.minijogos h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  margin: 0 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #dddddd;
 }
+
+.jogo-futuro {
+  border: 1px solid #dddddd;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background-color: #fafafa;
+}
+
+.jogo-futuro strong {
+  font-size: 14px;
+}
+
+.jogo-futuro p {
+  font-size: 13px;
+  color: #666666;
+  margin: 5px 0 0 0;
+}
+
 
 /* =========================
    RODAPÉ
@@ -460,6 +420,7 @@ footer {
 footer p + p {
   margin-top: 4px;
 }
+
 
 /* =========================
    RESPONSIVO
@@ -503,34 +464,24 @@ footer p + p {
     padding: 6px;
   }
 
-  .periodo-notas {
-    font-size: 16px;
+
+  /* Uma imagem por linha no celular */
+
+  .diversao-galeria {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .resumo-card {
-    min-width: 110px;
-    padding: 8px 10px;
+  .diversao-card {
+    padding: 5px;
   }
 
-  .resumo-card strong {
-    font-size: 16px;
+  .diversao-links {
+    flex-direction: column;
   }
 
-  /*
-     No celular, o Campo Minado fica
-     menor para caber na tela.
-  */
-
-  #minesweeper-tabuleiro {
-    grid-template-columns: repeat(10, 26px);
-    grid-template-rows: repeat(10, 26px);
-    gap: 1px;
-  }
-
-  .celula-mina {
-    width: 26px;
-    height: 26px;
-    font-size: 11px;
+  .diversao-links a {
+    text-align: center;
   }
 
 }
