@@ -29,7 +29,7 @@
       data-idioma="pt"
       title="Português">
 
-      🇧🇷
+      BR
 
     </button>
 
@@ -38,7 +38,7 @@
       data-idioma="en"
       title="English">
 
-      🇬🇧
+      GB
 
     </button>
 
@@ -79,20 +79,15 @@
 
   <nav id="abas">
 
-    <!-- HISTÓRIA -->
-
     <button
       class="aba-botao ativo"
       data-aba="historia"
       data-pt="História"
-      data-en="About Me">
+      data-en="Story">
 
       História
 
     </button>
-
-
-    <!-- OBJETIVO -->
 
     <button
       class="aba-botao"
@@ -104,9 +99,6 @@
 
     </button>
 
-
-    <!-- FORMAÇÃO -->
-
     <button
       class="aba-botao"
       data-aba="formacao"
@@ -116,9 +108,6 @@
       Formação
 
     </button>
-
-
-    <!-- PROJETOS -->
 
     <button
       class="aba-botao"
@@ -130,9 +119,6 @@
 
     </button>
 
-
-    <!-- NOTAS -->
-
     <button
       class="aba-botao"
       data-aba="notas"
@@ -142,9 +128,6 @@
       Notas
 
     </button>
-
-
-    <!-- TRABALHO VOLUNTÁRIO -->
 
     <button
       class="aba-botao"
@@ -156,9 +139,6 @@
 
     </button>
 
-
-    <!-- CURSOS -->
-
     <button
       class="aba-botao"
       data-aba="cursos"
@@ -168,9 +148,6 @@
       Cursos
 
     </button>
-
-
-    <!-- COMPETÊNCIAS -->
 
     <button
       class="aba-botao"
@@ -182,9 +159,6 @@
 
     </button>
 
-
-    <!-- IDIOMAS -->
-
     <button
       class="aba-botao"
       data-aba="idiomas"
@@ -192,6 +166,16 @@
       data-en="Languages">
 
       Idiomas
+
+    </button>
+
+    <button
+      class="aba-botao"
+      data-aba="cultura"
+      data-pt="Minha cultura"
+      data-en="My Culture">
+
+      Minha cultura
 
     </button>
 
@@ -266,75 +250,78 @@
       class="aba-conteudo ativo">
 
       <h3
-        data-pt="Minha História"
+        data-pt="Minha história"
         data-en="My Story">
 
-        Minha História
+        Minha história
 
       </h3>
 
+      <div class="texto-historia">
 
-      <p
-        data-pt="Estudante de Ciência da Computação na UFRJ, com uma base sólida em matemática construída ainda no Bacharelado em Ciências Matemáticas e da Terra antes da transferência de curso. Ao longo da graduação, venho combinando fundamentos teóricos (Álgebra Linear, Estatística e Probabilidade, Estruturas de Dados, Matemática Discreta, matérias que amo de exatas) com aplicação prática em projetos de dados reais: da análise de criminalidade no Rio de Janeiro com SVD, PCA e K-Means, à modelagem de um banco de dados relacional cruzando informações de transporte público (GTFS) e demografia da cidade."
-        data-en="Computer Science student at UFRJ, with a strong mathematical foundation built during my Bachelor's Degree in Mathematical and Earth Sciences before transferring to Computer Science. Throughout my degree, I have been combining theoretical foundations (Linear Algebra, Statistics and Probability, Data Structures, Discrete Mathematics — subjects that I really enjoy) with practical applications in real-world data projects: from analyzing crime in Rio de Janeiro using SVD, PCA and K-Means to modeling a relational database combining public transportation (GTFS) and city demographic information.">
+        <p
+          data-pt="Estudante de Ciência da Computação na UFRJ, com uma base sólida em matemática construída ainda no Bacharelado em Ciências Matemáticas e da Terra antes da transferência de curso. Ao longo da graduação, venho combinando fundamentos teóricos (Álgebra Linear, Estatística e Probabilidade, Estruturas de Dados, Matemática Discreta, matérias que amo de exatas) com aplicação prática em projetos de dados reais: da análise de criminalidade no Rio de Janeiro com SVD, PCA e K-Means, à modelagem de um banco de dados relacional cruzando informações de transporte público (GTFS) e demografia da cidade."
+          data-en="Computer Science student at UFRJ, with a solid mathematical foundation built during my Bachelor's degree in Mathematical and Earth Sciences before transferring to Computer Science. Throughout my degree, I have combined theoretical foundations (Linear Algebra, Statistics and Probability, Data Structures, Discrete Mathematics, subjects I love in exact sciences) with practical applications in real-world data projects: from analyzing crime in Rio de Janeiro using SVD, PCA and K-Means to modeling a relational database combining public transportation (GTFS) and city demographic information.">
 
-        Estudante de Ciência da Computação na UFRJ, com uma base sólida em
-        matemática construída ainda no Bacharelado em Ciências Matemáticas e
-        da Terra antes da transferência de curso. Ao longo da graduação, venho
-        combinando fundamentos teóricos (Álgebra Linear, Estatística e
-        Probabilidade, Estruturas de Dados, Matemática Discreta, matérias que
-        amo de exatas) com aplicação prática em projetos de dados reais: da
-        análise de criminalidade no Rio de Janeiro com SVD, PCA e K-Means, à
-        modelagem de um banco de dados relacional cruzando informações de
-        transporte público (GTFS) e demografia da cidade.
+          Estudante de Ciência da Computação na UFRJ, com uma base sólida em
+          matemática construída ainda no Bacharelado em Ciências Matemáticas e
+          da Terra antes da transferência de curso. Ao longo da graduação,
+          venho combinando fundamentos teóricos (Álgebra Linear, Estatística e
+          Probabilidade, Estruturas de Dados, Matemática Discreta, matérias que
+          amo de exatas) com aplicação prática em projetos de dados reais: da
+          análise de criminalidade no Rio de Janeiro com SVD, PCA e K-Means, à
+          modelagem de um banco de dados relacional cruzando informações de
+          transporte público (GTFS) e demografia da cidade.
 
-      </p>
-
-
-      <p
-        data-pt="Tenho interesse particular em transformar dados em decisões: gosto do processo completo, da limpeza e modelagem no banco até a construção de visualizações e dashboards que tornem os resultados acessíveis (já fiz isso com Streamlit, Pandas e Matplotlib)."
-        data-en="I am particularly interested in transforming data into decisions: I enjoy the entire process, from data cleaning and database modeling to building visualizations and dashboards that make results accessible (I have done this using Streamlit, Pandas and Matplotlib).">
-
-        Tenho interesse particular em transformar dados em decisões: gosto do
-        processo completo, da limpeza e modelagem no banco até a construção de
-        visualizações e dashboards que tornem os resultados acessíveis (já fiz
-        isso com Streamlit, Pandas e Matplotlib).
-
-      </p>
+        </p>
 
 
-      <p
-        data-pt="Sou monitor de Cálculo I por 3 anos, o que aguçou minha didática e minha paciência para explicar o 'porquê' por trás de cada conceito científico, habilidade que uso também nos minicursos de Python e Análise de Dados que ministro pela equipe For_code, e na gestão de pessoas que faço na UFRJ Analítica."
-        data-en="I have been a Calculus I teaching assistant for 3 years, which strengthened my teaching skills and patience for explaining the 'why' behind each scientific concept. I also use these skills in the Python and Data Analysis workshops I teach through the For_code team, as well as in the people management work I do at UFRJ Analítica.">
+        <p
+          data-pt="Tenho interesse particular em transformar dados em decisões: gosto do processo completo, da limpeza e modelagem no banco até a construção de visualizações e dashboards que tornem os resultados acessíveis (já fiz isso com Streamlit, Pandas e Matplotlib)."
+          data-en="I have a particular interest in transforming data into decisions: I enjoy the complete process, from cleaning and modeling data in databases to building visualizations and dashboards that make results accessible (I have done this using Streamlit, Pandas and Matplotlib).">
 
-        Sou monitor de Cálculo I por 3 anos, o que aguçou minha didática e minha
-        paciência para explicar o "porquê" por trás de cada conceito científico,
-        habilidade que uso também nos minicursos de Python e Análise de Dados
-        que ministro pela equipe For_code, e na gestão de pessoas que faço na
-        UFRJ Analítica.
+          Tenho interesse particular em transformar dados em decisões: gosto do
+          processo completo, da limpeza e modelagem no banco até a construção de
+          visualizações e dashboards que tornem os resultados acessíveis
+          (já fiz isso com Streamlit, Pandas e Matplotlib).
 
-      </p>
-
-
-      <p
-        data-pt="Busco uma oportunidade de estágio em Ciência de Dados ou Tecnologia da Informação onde eu possa continuar aprendendo, contribuir com análises que gerem impacto real e crescer perto de times que valorizem tanto rigor técnico quanto colaboração."
-        data-en="I am looking for an internship opportunity in Data Science or Information Technology where I can continue learning, contribute with analyses that generate real impact, and grow alongside teams that value both technical rigor and collaboration.">
-
-        Busco uma oportunidade de estágio em Ciência de Dados ou Tecnologia
-        da Informação onde eu possa continuar aprendendo, contribuir com
-        análises que gerem impacto real e crescer perto de times que valorizem
-        tanto rigor técnico quanto colaboração.
-
-      </p>
+        </p>
 
 
-      <p
-        data-pt="Minhas linguagens favoritas: Python, C, SQL e Java."
-        data-en="My favorite programming languages: Python, C, SQL and Java.">
+        <p
+          data-pt="Sou monitor de Cálculo I por 3 anos, o que aguçou minha didática e minha paciência para explicar o 'porquê' por trás de cada conceito científico, habilidade que uso também nos minicursos de Python e Análise de Dados que ministro pela equipe For_code, e na gestão de pessoas que faço na UFRJ Analítica."
+          data-en="I have been a Calculus I teaching assistant for 3 years, which strengthened my teaching skills and patience for explaining the 'why' behind each scientific concept. I also use these skills in the Python and Data Analysis short courses I teach through the For_code team, as well as in people management at UFRJ Analítica.">
 
-        Minhas linguagens favoritas: Python, C, SQL e Java.
+          Sou monitor de Cálculo I por 3 anos, o que aguçou minha didática e minha
+          paciência para explicar o "porquê" por trás de cada conceito científico,
+          habilidade que uso também nos minicursos de Python e Análise de Dados
+          que ministro pela equipe For_code, e na gestão de pessoas que faço na
+          UFRJ Analítica.
 
-      </p>
+        </p>
+
+
+        <p
+          data-pt="Busco uma oportunidade de estágio em Ciência de Dados ou Tecnologia da Informação onde eu possa continuar aprendendo, contribuir com análises que gerem impacto real e crescer perto de times que valorizem tanto rigor técnico quanto colaboração."
+          data-en="I am looking for an internship opportunity in Data Science or Information Technology where I can continue learning, contribute with analyses that generate real impact, and grow alongside teams that value both technical rigor and collaboration.">
+
+          Busco uma oportunidade de estágio em Ciência de Dados ou Tecnologia
+          da Informação onde eu possa continuar aprendendo, contribuir com
+          análises que gerem impacto real e crescer perto de times que valorizem
+          tanto rigor técnico quanto colaboração.
+
+        </p>
+
+
+        <p
+          data-pt="Minhas linguagens favoritas: Python, C, SQL e Java."
+          data-en="My favorite programming languages: Python, C, SQL and Java.">
+
+          Minhas linguagens favoritas: Python, C, SQL e Java.
+
+        </p>
+
+      </div>
 
     </section>
 
@@ -591,7 +578,7 @@
 
 
     <!-- =========================
-         NOTAS
+         NOTAS / HISTÓRICO
     ========================== -->
 
     <section
@@ -656,9 +643,7 @@
       </div>
 
 
-      <!-- =========================
-           2022/2
-      ========================== -->
+      <!-- 2022/2 -->
 
       <h4 class="periodo-notas">2022/2</h4>
 
@@ -668,33 +653,10 @@
 
           <thead>
             <tr>
-
               <th>Código</th>
-
-              <th
-                data-pt="Disciplina"
-                data-en="Course">
-
-                Disciplina
-
-              </th>
-
-              <th
-                data-pt="Nota"
-                data-en="Grade">
-
-                Nota
-
-              </th>
-
-              <th
-                data-pt="Situação"
-                data-en="Status">
-
-                Situação
-
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
           </thead>
 
@@ -749,9 +711,7 @@
       </div>
 
 
-      <!-- =========================
-           2023/1
-      ========================== -->
+      <!-- 2023/1 -->
 
       <h4 class="periodo-notas">2023/1</h4>
 
@@ -760,25 +720,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -825,9 +772,7 @@
       </div>
 
 
-      <!-- =========================
-           2023/2
-      ========================== -->
+      <!-- 2023/2 -->
 
       <h4 class="periodo-notas">2023/2</h4>
 
@@ -836,25 +781,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -901,9 +833,7 @@
       </div>
 
 
-      <!-- =========================
-           2024/1
-      ========================== -->
+      <!-- 2024/1 -->
 
       <h4 class="periodo-notas">2024/1</h4>
 
@@ -912,25 +842,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -963,9 +880,7 @@
       </div>
 
 
-      <!-- =========================
-           2024/2
-      ========================== -->
+      <!-- 2024/2 -->
 
       <h4 class="periodo-notas">2024/2</h4>
 
@@ -974,25 +889,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -1039,9 +941,7 @@
       </div>
 
 
-      <!-- =========================
-           2025/1
-      ========================== -->
+      <!-- 2025/1 -->
 
       <h4 class="periodo-notas">2025/1</h4>
 
@@ -1050,25 +950,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -1122,9 +1009,7 @@
       </div>
 
 
-      <!-- =========================
-           2025/2
-      ========================== -->
+      <!-- 2025/2 -->
 
       <h4 class="periodo-notas">2025/2</h4>
 
@@ -1133,25 +1018,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -1191,9 +1063,7 @@
       </div>
 
 
-      <!-- =========================
-           2026/1
-      ========================== -->
+      <!-- 2026/1 -->
 
       <h4 class="periodo-notas">2026/1</h4>
 
@@ -1202,25 +1072,12 @@
         <table class="tabela-notas">
 
           <thead>
-
             <tr>
-
               <th>Código</th>
-
-              <th data-pt="Disciplina" data-en="Course">
-                Disciplina
-              </th>
-
-              <th data-pt="Nota" data-en="Grade">
-                Nota
-              </th>
-
-              <th data-pt="Situação" data-en="Status">
-                Situação
-              </th>
-
+              <th data-pt="Disciplina" data-en="Course">Disciplina</th>
+              <th data-pt="Nota" data-en="Grade">Nota</th>
+              <th data-pt="Situação" data-en="Status">Situação</th>
             </tr>
-
           </thead>
 
           <tbody>
@@ -1516,6 +1373,285 @@
         </li>
 
       </ul>
+
+    </section>
+
+
+    <!-- =========================
+         MINHA CULTURA
+    ========================== -->
+
+    <section
+      id="cultura"
+      class="aba-conteudo">
+
+      <h3
+        data-pt="Minha cultura"
+        data-en="My Culture">
+
+        Minha cultura
+
+      </h3>
+
+
+      <p
+        class="cultura-introducao"
+        data-pt="Nem tudo sobre mim está em um currículo. Gosto de conhecer pessoas também pelos seus gostos, então esta é uma pequena coleção das coisas que fazem parte da minha cultura: jogos, música, filmes e projetos."
+        data-en="Not everything about me belongs on a résumé. I also like getting to know people through their interests, so this is a small collection of things that are part of my culture: games, music, movies and projects.">
+
+        Nem tudo sobre mim está em um currículo. Gosto de conhecer pessoas
+        também pelos seus gostos, então esta é uma pequena coleção das coisas
+        que fazem parte da minha cultura: jogos, música, filmes e projetos.
+
+      </p>
+
+
+      <!-- =========================
+           STEAM
+      ========================== -->
+
+      <article class="cultura-bloco">
+
+        <h4>Steam</h4>
+
+        <a
+          href="https://steamcommunity.com/profiles/76561198041276973/"
+          target="_blank"
+          class="cultura-imagem-link">
+
+          <img
+            src="steam.jpg"
+            alt="Perfil Steam de Ignoto"
+            class="cultura-imagem">
+
+        </a>
+
+        <p>
+          <strong>Ignoto</strong>
+        </p>
+
+        <p
+          data-pt="Meus jogos favoritos na Steam:"
+          data-en="My favorite Steam games:">
+
+          Meus jogos favoritos na Steam:
+
+        </p>
+
+        <ol class="lista-cultura">
+
+          <li>Psychonauts</li>
+          <li>Psychonauts 2</li>
+          <li>Dark Souls Remastered</li>
+          <li>Dark Souls III</li>
+          <li>Elden Ring</li>
+          <li>Quantum Break</li>
+
+        </ol>
+
+      </article>
+
+
+      <!-- =========================
+           LAST.FM
+      ========================== -->
+
+      <article class="cultura-bloco">
+
+        <h4>Last.fm</h4>
+
+        <a
+          href="https://www.last.fm/user/Sgcont"
+          target="_blank"
+          class="cultura-imagem-link">
+
+          <img
+            src="lastfm.jpg"
+            alt="Perfil musical no Last.fm"
+            class="cultura-imagem">
+
+        </a>
+
+        <p
+          data-pt="Artistas que mais aparecem entre minhas músicas:"
+          data-en="Artists that appear most often among my music:">
+
+          Artistas que mais aparecem entre minhas músicas:
+
+        </p>
+
+        <ol class="lista-cultura">
+
+          <li>Red Hot Chili Peppers</li>
+          <li>Nickelback</li>
+          <li>System of a Down</li>
+          <li>Radiohead</li>
+          <li>Fresno</li>
+
+        </ol>
+
+      </article>
+
+
+      <!-- =========================
+           LETTERBOXD
+      ========================== -->
+
+      <article class="cultura-bloco">
+
+        <h4>Letterboxd</h4>
+
+        <a
+          href="https://boxd.it/6EtJf"
+          target="_blank"
+          class="cultura-imagem-link">
+
+          <img
+            src="letterboxd.jpg"
+            alt="Perfil do Letterboxd"
+            class="cultura-imagem">
+
+        </a>
+
+        <p
+          data-pt="Filmes que fazem parte dos meus favoritos:"
+          data-en="Movies that are among my favorites:">
+
+          Filmes que fazem parte dos meus favoritos:
+
+        </p>
+
+        <div class="filmes-cultura">
+
+          <span>Matrix</span>
+          <span>Guardiões da Galáxia Vol. 3</span>
+          <span>My Two Cents</span>
+          <span>Corra que a Polícia Vem Aí!</span>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           OUTROS PERFIS
+      ========================== -->
+
+      <article class="cultura-bloco">
+
+        <h4
+          data-pt="Outros lugares onde você pode me encontrar"
+          data-en="Other places where you can find me">
+
+          Outros lugares onde você pode me encontrar
+
+        </h4>
+
+        <div class="links-cultura">
+
+          <a
+            href="https://www.linkedin.com/in/lucas-de-araujo-contreiras-174185301"
+            target="_blank">
+
+            LinkedIn
+
+          </a>
+
+          <a
+            href="http://lattes.cnpq.br/5677485666450221"
+            target="_blank">
+
+            Currículo Lattes
+
+          </a>
+
+          <a
+            href="https://github.com/Sgcont"
+            target="_blank">
+
+            GitHub
+
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           MINIJOGOS
+      ========================== -->
+
+      <article class="cultura-bloco minijogos">
+
+        <h4
+          data-pt="Minijogos"
+          data-en="Mini Games">
+
+          Minijogos
+
+        </h4>
+
+        <div class="jogo-card">
+
+          <div>
+
+            <h5
+              data-pt="Campo Minado"
+              data-en="Minesweeper">
+
+              Campo Minado
+
+            </h5>
+
+            <p
+              data-pt="Um Campo Minado 10x10 com 20 bombas. A versão em Python para navegador está planejada para uma próxima atualização."
+              data-en="A 10x10 Minesweeper board with 20 mines. The Python browser version is planned for a future update.">
+
+              Um Campo Minado 10x10 com 20 bombas. A versão em Python para
+              navegador está planejada para uma próxima atualização.
+
+            </p>
+
+          </div>
+
+          <span class="jogo-status">
+            Em desenvolvimento
+          </span>
+
+        </div>
+
+
+        <div class="jogo-card futuro">
+
+          <div>
+
+            <h5
+              data-pt="Mais jogos da GDP"
+              data-en="More GDP Games">
+
+              Mais jogos da GDP
+
+            </h5>
+
+            <p
+              data-pt="No futuro, também quero colocar aqui alguns dos jogos que fiz na GDP, incluindo projetos em que participei como roteirista."
+              data-en="In the future, I also want to add some of the games I made at GDP, including projects where I worked as a writer.">
+
+              No futuro, também quero colocar aqui alguns dos jogos que fiz
+              na GDP, incluindo projetos em que participei como roteirista.
+
+            </p>
+
+          </div>
+
+          <span class="jogo-status">
+            Futuro
+          </span>
+
+        </div>
+
+      </article>
 
     </section>
 
