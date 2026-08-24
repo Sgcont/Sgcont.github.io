@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ========================= */
 
   const ULTIMA_ATUALIZACAO =
-    "21 de agosto de 2026";
+    "23 de agosto de 2026";
 
   const elementoData =
     document.getElementById("data-atualizacao");
