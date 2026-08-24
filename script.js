@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
   /* =========================
      ABAS
-  ========================= */
+  ========================== */
 
   const botoes =
     document.querySelectorAll(".aba-botao");
@@ -20,12 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       botoes.forEach(function (b) {
+
         b.classList.remove("ativo");
+
       });
 
 
       conteudos.forEach(function (c) {
+
         c.classList.remove("ativo");
+
       });
 
 
@@ -37,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       if (conteudo) {
+
         conteudo.classList.add("ativo");
+
       }
 
     });
@@ -47,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      TRADUÇÃO
-  ========================= */
+  ========================== */
 
   const botoesIdioma =
     document.querySelectorAll(".idioma-botao");
@@ -56,9 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function traduzir(idioma) {
 
     const elementos =
-      document.querySelectorAll(
-        "[data-pt][data-en]"
-      );
+      document.querySelectorAll("[data-pt][data-en]");
 
 
     elementos.forEach(function (elemento) {
@@ -78,7 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Idioma da página */
+    /* =========================
+       IDIOMA DA PÁGINA
+    ========================== */
 
     if (idioma === "en") {
 
@@ -97,7 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Botão ativo */
+    /* =========================
+       BOTÃO ATIVO
+    ========================== */
 
     botoesIdioma.forEach(function (botao) {
 
@@ -115,24 +124,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Salva idioma */
+    /* =========================
+       SALVA IDIOMA
+    ========================== */
 
-    localStorage.setItem(
-      "idioma",
-      idioma
-    );
-
-
-    /* Atualiza contador */
-
-    atualizarTextoContador();
+    localStorage.setItem("idioma", idioma);
 
   }
 
 
   /* =========================
      BOTÕES DE IDIOMA
-  ========================= */
+  ========================== */
 
   botoesIdioma.forEach(function (botao) {
 
@@ -141,7 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const idioma =
         botao.getAttribute("data-idioma");
 
+
       traduzir(idioma);
+
+      atualizarContadorVisitas(idioma);
 
     });
 
@@ -150,16 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      DATA DA ÚLTIMA ATUALIZAÇÃO
-  ========================= */
+  ========================== */
 
   const ULTIMA_ATUALIZACAO =
     "21 de agosto de 2026";
 
 
   const elementoData =
-    document.getElementById(
-      "data-atualizacao"
-    );
+    document.getElementById("data-atualizacao");
 
 
   if (elementoData) {
@@ -172,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      CONTADOR DE VISITAS
-  ========================= */
+  ========================== */
 
   const NAMESPACE_CONTADOR =
     "sgcont.github.io";
@@ -183,48 +187,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   const elContadorVisitas =
-    document.getElementById(
-      "contador-visitas"
-    );
+    document.getElementById("contador-visitas");
 
 
-  let numeroVisitas = null;
+  function atualizarContadorVisitas(idioma) {
 
-
-  function atualizarTextoContador() {
-
-    if (
-      !elContadorVisitas ||
-      numeroVisitas === null
-    ) {
+    if (!elContadorVisitas) {
       return;
     }
 
-
-    const idioma =
-      localStorage.getItem("idioma") || "pt";
-
-
-    if (idioma === "en") {
-
-      elContadorVisitas.textContent =
-        "You are the " +
-        numeroVisitas +
-        "th person to visit my profile";
-
-    } else {
-
-      elContadorVisitas.textContent =
-        "Você é a " +
-        numeroVisitas +
-        "ª pessoa a entrar no meu perfil";
-
-    }
-
-  }
-
-
-  if (elContadorVisitas) {
 
     fetch(
       "https://abacus.jasoncameron.dev/hit/" +
@@ -241,17 +212,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
       .then(function (dados) {
 
-        numeroVisitas =
-          dados.value;
+        if (idioma === "en") {
 
-        atualizarTextoContador();
+          elContadorVisitas.textContent =
+            "You are the " +
+            dados.value +
+            "th person to visit my profile";
+
+        } else {
+
+          elContadorVisitas.textContent =
+            "Você é a " +
+            dados.value +
+            "ª pessoa a entrar no meu perfil";
+
+        }
 
       })
 
       .catch(function () {
 
-        elContadorVisitas.textContent =
-          "";
+        elContadorVisitas.textContent = "";
 
       });
 
@@ -260,12 +241,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      IDIOMA INICIAL
-  ========================= */
+  ========================== */
 
   const idiomaSalvo =
     localStorage.getItem("idioma") || "pt";
 
 
   traduzir(idiomaSalvo);
+
+
+  /* =========================
+     CONTADOR INICIAL
+  ========================== */
+
+  atualizarContadorVisitas(idiomaSalvo);
 
 });
