@@ -8,23 +8,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const botoes = document.querySelectorAll(".aba-botao");
   const conteudos = document.querySelectorAll(".aba-conteudo");
 
+
   botoes.forEach(function (botao) {
 
     botao.addEventListener("click", function () {
 
       const alvo = botao.getAttribute("data-aba");
 
+
       botoes.forEach(function (b) {
         b.classList.remove("ativo");
       });
+
 
       conteudos.forEach(function (c) {
         c.classList.remove("ativo");
       });
 
+
       botao.classList.add("ativo");
 
-      const conteudo = document.getElementById(alvo);
+
+      const conteudo =
+        document.getElementById(alvo);
+
 
       if (conteudo) {
         conteudo.classList.add("ativo");
@@ -100,6 +107,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     localStorage.setItem("idioma", idioma);
 
+
+    atualizarTextoContador();
+
   }
 
 
@@ -118,14 +128,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     DATA DA ATUALIZAÇÃO
+     DATA DA ÚLTIMA ATUALIZAÇÃO
   ========================== */
 
   const ULTIMA_ATUALIZACAO =
     "25 de agosto de 2026";
 
+
   const elementoData =
     document.getElementById("data-atualizacao");
+
 
   if (elementoData) {
 
@@ -142,11 +154,49 @@ document.addEventListener("DOMContentLoaded", function () {
   const NAMESPACE_CONTADOR =
     "sgcont.github.io";
 
+
   const CHAVE_CONTADOR =
     "perfil-visitas";
 
+
   const elContadorVisitas =
     document.getElementById("contador-visitas");
+
+
+  let numeroVisitas = null;
+
+
+  function atualizarTextoContador() {
+
+    if (
+      !elContadorVisitas ||
+      numeroVisitas === null
+    ) {
+      return;
+    }
+
+
+    const idioma =
+      localStorage.getItem("idioma") || "pt";
+
+
+    if (idioma === "en") {
+
+      elContadorVisitas.textContent =
+        "You are the " +
+        numeroVisitas +
+        "th person to visit my profile";
+
+    } else {
+
+      elContadorVisitas.textContent =
+        "Você é a " +
+        numeroVisitas +
+        "ª pessoa a entrar no meu perfil";
+
+    }
+
+  }
 
 
   if (elContadorVisitas) {
@@ -159,29 +209,17 @@ document.addEventListener("DOMContentLoaded", function () {
     )
 
       .then(function (resposta) {
+
         return resposta.json();
+
       })
 
       .then(function (dados) {
 
-        const idioma =
-          localStorage.getItem("idioma") || "pt";
+        numeroVisitas =
+          dados.value;
 
-        if (idioma === "en") {
-
-          elContadorVisitas.textContent =
-            "You are the " +
-            dados.value +
-            "th person to visit my profile";
-
-        } else {
-
-          elContadorVisitas.textContent =
-            "Você é a " +
-            dados.value +
-            "ª pessoa a entrar no meu perfil";
-
-        }
+        atualizarTextoContador();
 
       })
 
@@ -195,74 +233,229 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     AVALIAÇÃO
+     SISTEMA DE AVALIAÇÃO
   ========================== */
 
-  const botoesAvaliacao =
-    document.querySelectorAll(
-      'input[name="nota-avaliacao"]'
-    );
+  const estrelas =
+    document.querySelectorAll(".estrela");
 
-  const botaoAvaliar =
-    document.getElementById("botao-avaliar");
 
-  const mensagemAvaliacao =
-    document.getElementById("mensagem-avaliacao");
+  const valorSelecionado =
+    document.getElementById("valor-selecionado");
 
-  const mediaNumero =
-    document.getElementById("media-numero");
+
+  const botaoEnviar =
+    document.getElementById("enviar-avaliacao");
+
+
+  const mediaValor =
+    document.getElementById("media-valor");
+
 
   const estrelasPreenchidas =
     document.getElementById("estrelas-preenchidas");
+
 
   const quantidadeAvaliacoes =
     document.getElementById("quantidade-avaliacoes");
 
 
+  const CHAVE_AVALIACOES =
+    "avaliacoes-monitoria-lucas";
+
+
+  let avaliacaoSelecionada = 0;
+
+
+  function obterAvaliacoes() {
+
+    try {
+
+      const dados =
+        localStorage.getItem(CHAVE_AVALIACOES);
+
+      if (!dados) {
+        return [];
+      }
+
+      const avaliacoes =
+        JSON.parse(dados);
+
+      if (!Array.isArray(avaliacoes)) {
+        return [];
+      }
+
+      return avaliacoes;
+
+    } catch (erro) {
+
+      return [];
+
+    }
+
+  }
+
+
+  function salvarAvaliacoes(avaliacoes) {
+
+    localStorage.setItem(
+      CHAVE_AVALIACOES,
+      JSON.stringify(avaliacoes)
+    );
+
+  }
+
+
+  function mostrarEstrelas(valor) {
+
+    estrelas.forEach(function (estrela) {
+
+      const numero =
+        Number(
+          estrela.getAttribute("data-valor")
+        );
+
+
+      if (numero <= valor) {
+
+        estrela.classList.add("selecionada");
+
+      } else {
+
+        estrela.classList.remove("selecionada");
+
+      }
+
+    });
+
+  }
+
+
+  estrelas.forEach(function (estrela) {
+
+    estrela.addEventListener("mouseenter", function () {
+
+      const valor =
+        Number(
+          estrela.getAttribute("data-valor")
+        );
+
+      mostrarEstrelas(valor);
+
+    });
+
+
+    estrela.addEventListener("click", function () {
+
+      avaliacaoSelecionada =
+        Number(
+          estrela.getAttribute("data-valor")
+        );
+
+
+      mostrarEstrelas(
+        avaliacaoSelecionada
+      );
+
+
+      const idioma =
+        localStorage.getItem("idioma") || "pt";
+
+
+      if (idioma === "en") {
+
+        valorSelecionado.textContent =
+          "Selected rating: " +
+          avaliacaoSelecionada +
+          " star" +
+          (
+            avaliacaoSelecionada > 1
+              ? "s"
+              : ""
+          );
+
+      } else {
+
+        valorSelecionado.textContent =
+          "Avaliação selecionada: " +
+          avaliacaoSelecionada +
+          " estrela" +
+          (
+            avaliacaoSelecionada > 1
+              ? "s"
+              : ""
+          );
+
+      }
+
+    });
+
+  });
+
+
+  const areaEstrelas =
+    document.getElementById(
+      "estrelas-avaliacao"
+    );
+
+
+  areaEstrelas.addEventListener(
+    "mouseleave",
+    function () {
+
+      mostrarEstrelas(
+        avaliacaoSelecionada
+      );
+
+    }
+  );
+
+
   function atualizarMedia() {
 
     const avaliacoes =
-      JSON.parse(
-        localStorage.getItem("avaliacoes-monitoria") || "[]"
-      );
+      obterAvaliacoes();
 
 
     if (avaliacoes.length === 0) {
 
-      mediaNumero.textContent = "0,0";
+      mediaValor.textContent =
+        "0,0";
 
-      estrelasPreenchidas.style.width = "0%";
+
+      estrelasPreenchidas.style.width =
+        "0%";
+
 
       quantidadeAvaliacoes.textContent =
-        "0 avaliações";
+        "Nenhuma avaliação ainda.";
 
       return;
 
     }
 
 
-    const soma =
-      avaliacoes.reduce(function (total, nota) {
+    let soma = 0;
 
-        return total + nota;
 
-      }, 0);
+    avaliacoes.forEach(function (valor) {
+
+      soma += Number(valor);
+
+    });
 
 
     const media =
       soma / avaliacoes.length;
 
 
-    mediaNumero.textContent =
+    const mediaFormatada =
       media.toFixed(1).replace(".", ",");
 
 
-    /*
-      5 estrelas correspondem a 100%.
-      Portanto:
+    mediaValor.textContent =
+      mediaFormatada;
 
-      4,7 / 5 = 94%
-    */
 
     const porcentagem =
       (media / 5) * 100;
@@ -272,70 +465,107 @@ document.addEventListener("DOMContentLoaded", function () {
       porcentagem + "%";
 
 
-    quantidadeAvaliacoes.textContent =
-      avaliacoes.length === 1
-        ? "1 avaliação"
-        : avaliacoes.length + " avaliações";
+    const idioma =
+      localStorage.getItem("idioma") || "pt";
+
+
+    if (idioma === "en") {
+
+      quantidadeAvaliacoes.textContent =
+        avaliacoes.length +
+        (
+          avaliacoes.length === 1
+            ? " rating"
+            : " ratings"
+        );
+
+    } else {
+
+      quantidadeAvaliacoes.textContent =
+        avaliacoes.length +
+        (
+          avaliacoes.length === 1
+            ? " avaliação"
+            : " avaliações"
+        );
+
+    }
 
   }
 
 
-  if (botaoAvaliar) {
+  if (botaoEnviar) {
 
-    botaoAvaliar.addEventListener("click", function () {
+    botaoEnviar.addEventListener(
+      "click",
+      function () {
 
-      let notaSelecionada = null;
+        if (avaliacaoSelecionada === 0) {
+
+          const idioma =
+            localStorage.getItem("idioma") || "pt";
 
 
-      botoesAvaliacao.forEach(function (botao) {
+          if (idioma === "en") {
 
-        if (botao.checked) {
+            valorSelecionado.textContent =
+              "Please select a rating first.";
 
-          notaSelecionada =
-            Number(botao.value);
+          } else {
+
+            valorSelecionado.textContent =
+              "Selecione uma avaliação primeiro.";
+
+          }
+
+          return;
 
         }
 
-      });
+
+        const avaliacoes =
+          obterAvaliacoes();
 
 
-      if (notaSelecionada === null) {
-
-        mensagemAvaliacao.textContent =
-          "Selecione uma nota antes de avaliar.";
-
-        return;
-
-      }
-
-
-      const avaliacoes =
-        JSON.parse(
-          localStorage.getItem("avaliacoes-monitoria") || "[]"
+        avaliacoes.push(
+          avaliacaoSelecionada
         );
 
 
-      avaliacoes.push(notaSelecionada);
+        salvarAvaliacoes(
+          avaliacoes
+        );
 
 
-      localStorage.setItem(
-        "avaliacoes-monitoria",
-        JSON.stringify(avaliacoes)
-      );
+        avaliacaoSelecionada = 0;
 
 
-      mensagemAvaliacao.textContent =
-        "Obrigado pela avaliação!";
+        mostrarEstrelas(0);
 
 
-      atualizarMedia();
+        const idioma =
+          localStorage.getItem("idioma") || "pt";
 
-    });
+
+        if (idioma === "en") {
+
+          valorSelecionado.textContent =
+            "Thank you for your feedback!";
+
+        } else {
+
+          valorSelecionado.textContent =
+            "Obrigado pela avaliação!";
+
+        }
+
+
+        atualizarMedia();
+
+      }
+    );
 
   }
-
-
-  atualizarMedia();
 
 
   /* =========================
@@ -345,6 +575,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const idiomaSalvo =
     localStorage.getItem("idioma") || "pt";
 
+
   traduzir(idiomaSalvo);
+
+
+  /* =========================
+     CARREGA MÉDIA
+  ========================== */
+
+  atualizarMedia();
 
 });
