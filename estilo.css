@@ -8,10 +8,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 1.55;
-
   max-width: 900px;
   margin: 0 auto;
-
   padding: 30px 20px 60px 20px;
 }
 
@@ -31,12 +29,9 @@ body {
   background: #ffffff;
   border: 1px solid #cccccc;
   border-radius: 4px;
-
-  padding: 4px 7px;
-
+  padding: 5px 8px;
   cursor: pointer;
-
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
 }
 
@@ -56,92 +51,30 @@ body {
 
 header {
   border-bottom: 1px solid #cccccc;
-
   padding-bottom: 16px;
   margin-bottom: 20px;
 }
 
 h1 {
   font-family: Georgia, "Times New Roman", serif;
-
   font-size: 28px;
-
   margin: 0 0 4px 0;
-
   color: #111111;
 }
 
 h2 {
   font-family: Georgia, "Times New Roman", serif;
-
   font-weight: normal;
   font-style: italic;
-
   font-size: 16px;
-
   margin: 0 0 2px 0;
-
   color: #444444;
 }
 
 .subtitulo {
   margin: 0;
-
   font-size: 14px;
-
   color: #555555;
-}
-
-
-/* =========================
-   PERFIL
-========================= */
-
-.perfil-bloco {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 20px;
-
-  margin-bottom: 24px;
-
-  width: 100%;
-}
-
-.foto-perfil {
-  display: block;
-
-  width: 130px;
-  height: 165px;
-
-  object-fit: cover;
-
-  border: 1px solid #999999;
-
-  flex: 0 0 130px;
-}
-
-.contato {
-  font-size: 13px;
-
-  color: #444444;
-
-  line-height: 1.9;
-
-  padding-top: 4px;
-
-  min-width: 0;
-}
-
-.contato a {
-  color: #1a4fa0;
-
-  text-decoration: none;
-}
-
-.contato a:hover {
-  text-decoration: underline;
 }
 
 
@@ -151,35 +84,22 @@ h2 {
 
 #abas {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 4px;
-
   border-bottom: 1px solid #cccccc;
-
   margin-bottom: 24px;
 }
 
 .aba-botao {
   background: none;
-
   border: 1px solid #cccccc;
-
   border-bottom: none;
-
   border-radius: 4px 4px 0 0;
-
   padding: 8px 14px;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 13px;
-
   color: #444444;
-
   cursor: pointer;
-
   margin-bottom: -1px;
 }
 
@@ -189,19 +109,51 @@ h2 {
 
 .aba-botao.ativo {
   background-color: #ffffff;
-
   border-color: #999999;
-
   color: #111111;
-
   font-weight: bold;
-
   border-bottom: 1px solid #ffffff;
 }
 
 
 /* =========================
-   CONTEÚDO DAS ABAS
+   PERFIL
+========================= */
+
+.perfil-bloco {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.foto-perfil {
+  width: 130px;
+  height: 165px;
+  object-fit: cover;
+  border: 1px solid #999999;
+  flex-shrink: 0;
+}
+
+.contato {
+  font-size: 13px;
+  color: #444444;
+  line-height: 1.9;
+  padding-top: 4px;
+}
+
+.contato a {
+  color: #1a4fa0;
+  text-decoration: none;
+}
+
+.contato a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   CONTEÚDO
 ========================= */
 
 .aba-conteudo {
@@ -214,23 +166,17 @@ h2 {
 
 h3 {
   font-family: Georgia, "Times New Roman", serif;
-
   font-size: 19px;
-
   color: #111111;
-
   border-bottom: 1px solid #dddddd;
-
   padding-bottom: 6px;
-
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-.aba-conteudo p {
-  margin-top: 0;
-
-  margin-bottom: 14px;
+h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #111111;
 }
 
 .item {
@@ -238,26 +184,20 @@ h3 {
 }
 
 .item h4 {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-
   margin: 0 0 2px 0;
-
-  color: #111111;
 }
 
 .item .meta {
   font-style: italic;
-
   font-size: 13px;
-
   color: #666666;
-
   margin: 0 0 6px 0;
 }
 
 .item ul {
   margin: 0;
-
   padding-left: 20px;
 }
 
@@ -267,7 +207,6 @@ h3 {
 
 .lista-competencias {
   list-style: none;
-
   padding: 0;
   margin: 0;
 }
@@ -282,47 +221,37 @@ h3 {
 ========================= */
 
 #historia p {
-  max-width: 850px;
+  margin-bottom: 16px;
 }
 
 
 /* =========================
-   TABELA DE NOTAS
+   TABELA
 ========================= */
 
 .tabela-notas-container {
   width: 100%;
-
   overflow-x: auto;
-
   margin-bottom: 24px;
 }
 
 .tabela-notas {
   width: 100%;
-
   border-collapse: collapse;
-
   font-size: 13px;
 }
 
 .tabela-notas th {
   background-color: #f2f2f2;
-
   color: #222222;
-
   font-weight: bold;
-
   text-align: left;
-
   border-bottom: 2px solid #cccccc;
-
   padding: 8px;
 }
 
 .tabela-notas td {
   border-bottom: 1px solid #dddddd;
-
   padding: 7px 8px;
 }
 
@@ -332,65 +261,50 @@ h3 {
 
 .tabela-notas .nota {
   font-weight: bold;
-
   text-align: center;
 }
 
 .tabela-notas .aprovado {
   color: #333333;
-
   font-weight: bold;
 }
 
 .periodo-notas {
   font-family: Georgia, "Times New Roman", serif;
-
   font-size: 17px;
-
   margin-top: 26px;
   margin-bottom: 8px;
-
   padding-bottom: 5px;
-
   border-bottom: 1px solid #dddddd;
 }
 
 
 /* =========================
-   RESUMO DO HISTÓRICO
+   RESUMO ACADÊMICO
 ========================= */
 
 .resumo-notas {
   display: flex;
-
   gap: 12px;
-
   flex-wrap: wrap;
-
   margin-bottom: 20px;
 }
 
 .resumo-card {
   border: 1px solid #dddddd;
-
   padding: 10px 14px;
-
   min-width: 130px;
-
   background-color: #fafafa;
 }
 
 .resumo-card strong {
   display: block;
-
   font-size: 18px;
-
   color: #111111;
 }
 
 .resumo-card span {
   font-size: 12px;
-
   color: #666666;
 }
 
@@ -401,90 +315,51 @@ h3 {
 
 .cultura-links {
   display: flex;
-
+  gap: 15px;
   flex-wrap: wrap;
-
-  gap: 16px;
-
   margin: 20px 0 28px 0;
 }
 
 .cultura-link {
-  display: block;
-
-  width: 170px;
-
-  color: #222222;
-
-  text-decoration: none;
-
+  width: 180px;
   border: 1px solid #dddddd;
-
-  padding: 8px;
-
-  background-color: #fafafa;
+  text-decoration: none;
+  color: #222222;
+  background: #fafafa;
+  transition: 0.2s;
 }
 
 .cultura-link:hover {
-  background-color: #f2f2f2;
-
   border-color: #999999;
+  background: #f2f2f2;
 }
 
 .cultura-link img {
   display: block;
-
   width: 100%;
-  height: 95px;
-
+  height: 90px;
   object-fit: cover;
-
-  border: 1px solid #dddddd;
-
-  margin-bottom: 7px;
+  border-bottom: 1px solid #dddddd;
 }
 
 .cultura-link span {
   display: block;
-
-  text-align: center;
-
+  padding: 8px;
   font-weight: bold;
-
-  font-size: 13px;
+  text-align: center;
 }
 
-#cultura h4 {
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 16px;
-
-  margin-top: 25px;
-
-  margin-bottom: 9px;
-
-  border-bottom: 1px solid #dddddd;
-
-  padding-bottom: 5px;
-}
-
-.lista-cultura {
+.cultura-lista {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 7px;
-
-  margin-bottom: 15px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-.lista-cultura span {
+.cultura-lista span {
   border: 1px solid #dddddd;
-
+  padding: 6px 10px;
   background-color: #fafafa;
-
-  padding: 5px 9px;
-
   font-size: 13px;
 }
 
@@ -495,131 +370,171 @@ h3 {
 
 .minijogos {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 12px;
+  gap: 10px;
 }
 
 .minijogo {
-  border: 1px solid #dddddd;
-
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #cccccc;
+  color: #222222;
+  text-decoration: none;
   background-color: #fafafa;
-
-  padding: 12px;
-
-  width: 220px;
 }
 
-.minijogo h5 {
-  font-size: 14px;
-
-  margin: 0 0 4px 0;
+.minijogo:hover {
+  background-color: #f2f2f2;
 }
 
-.minijogo p {
-  font-size: 12px;
+.minijogo.futuro {
+  color: #777777;
+  cursor: default;
+}
 
-  color: #666666;
-
-  margin: 0;
+.minijogo small {
+  display: block;
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 2px;
 }
 
 
 /* =========================
-   AVALIAÇÃO
+   AVALIE-ME
 ========================= */
 
-.avaliacao {
+.avaliacao-intro {
+  max-width: 720px;
+}
+
+.avaliacao-intro p {
+  margin-bottom: 15px;
+}
+
+.avaliacao-intro a {
+  color: #1a4fa0;
+}
+
+
+/* Caixa da avaliação */
+
+.avaliacao-box {
   border: 1px solid #dddddd;
-
   background-color: #fafafa;
-
   padding: 18px;
-
-  max-width: 500px;
-
-  text-align: center;
+  margin-top: 24px;
 }
 
-.estrelas-selecao {
+.avaliacao-box h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+
+/* Opções */
+
+.avaliacao-opcoes {
   display: flex;
-
-  flex-direction: row-reverse;
-
-  justify-content: center;
-
-  gap: 2px;
-
-  margin-bottom: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.estrelas-selecao input {
+.avaliacao-opcao {
+  cursor: pointer;
+}
+
+.avaliacao-opcao input {
   display: none;
 }
 
-.estrelas-selecao label {
-  font-size: 32px;
-
-  color: #cccccc;
-
-  cursor: pointer;
-
-  line-height: 1;
+.avaliacao-opcao span {
+  display: block;
+  min-width: 105px;
+  padding: 9px 10px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  text-align: center;
+  transition: 0.15s;
 }
 
-.estrelas-selecao label:hover,
-.estrelas-selecao label:hover ~ label,
-.estrelas-selecao input:checked ~ label {
-  color: #f2b01e;
+.avaliacao-opcao span:hover {
+  background-color: #f2f2f2;
+  border-color: #999999;
 }
+
+.avaliacao-opcao input:checked + span {
+  border-color: #555555;
+  background-color: #eeeeee;
+  font-weight: bold;
+}
+
+.avaliacao-opcao strong {
+  display: block;
+  font-size: 17px;
+}
+
+.avaliacao-opcao small {
+  display: block;
+  font-size: 11px;
+  color: #666666;
+  margin-top: 2px;
+}
+
+
+/* Botão */
 
 #botao-avaliar {
+  margin-top: 16px;
+  padding: 8px 16px;
   border: 1px solid #999999;
-
   background-color: #ffffff;
-
-  padding: 7px 15px;
-
-  font-size: 13px;
-
+  color: #222222;
   cursor: pointer;
-
-  border-radius: 3px;
+  font-size: 13px;
 }
 
 #botao-avaliar:hover {
-  background-color: #f2f2f2;
+  background-color: #eeeeee;
 }
+
+
+/* Mensagem */
+
+.mensagem-avaliacao {
+  font-size: 12px;
+  color: #666666;
+  margin: 10px 0 0 0;
+}
+
+
+/* =========================
+   MÉDIA
+========================= */
 
 .media-avaliacao {
-  margin-top: 20px;
-
-  padding-top: 15px;
-
+  margin-top: 28px;
+  padding: 18px;
   border-top: 1px solid #dddddd;
+  text-align: center;
 }
 
-#media-estrelas {
+.media-numero {
   display: block;
-
   font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 24px;
-
-  margin-bottom: 5px;
+  font-size: 28px;
+  color: #222222;
+  margin-bottom: 4px;
 }
 
 .estrelas-media {
   position: relative;
-
   display: inline-block;
-
   font-size: 25px;
-
   line-height: 1;
-
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .estrelas-fundo {
@@ -628,25 +543,19 @@ h3 {
 
 .estrelas-preenchidas {
   position: absolute;
-
   left: 0;
   top: 0;
-
   width: 0%;
-
   overflow: hidden;
-
   white-space: nowrap;
-
-  color: #f2b01e;
+  color: #333333;
 }
 
-#quantidade-avaliacoes {
-  color: #777777;
-
+.quantidade-avaliacoes {
+  display: block;
+  margin-top: 7px;
   font-size: 12px;
-
-  margin: 6px 0 0 0;
+  color: #777777;
 }
 
 
@@ -656,15 +565,10 @@ h3 {
 
 footer {
   margin-top: 40px;
-
   border-top: 1px solid #dddddd;
-
   padding-top: 12px;
-
   font-size: 12px;
-
   color: #888888;
-
   text-align: center;
 }
 
@@ -680,97 +584,67 @@ footer p + p {
 @media (max-width: 600px) {
 
   body {
-    padding: 20px 12px 40px 12px;
-
+    padding: 18px 12px 40px 12px;
     font-size: 14px;
   }
 
 
   h1 {
-    font-size: 22px;
-
+    font-size: 23px;
     line-height: 1.25;
   }
 
 
   h2 {
     font-size: 15px;
-
-    line-height: 1.4;
   }
 
 
-  .subtitulo {
-    font-size: 13px;
+  /* Abas */
+
+  #abas {
+    gap: 3px;
+  }
+
+  .aba-botao {
+    font-size: 12px;
+    padding: 6px 9px;
   }
 
 
-  /* IMPORTANTE:
-     A foto continua pequena no celular.
-     Ela NÃO ocupa a largura da página. */
+  /* Perfil */
 
   .perfil-bloco {
     display: flex;
-
-    flex-direction: row;
-
     align-items: flex-start;
-
     gap: 12px;
-
-    width: 100%;
-
-    margin-bottom: 20px;
   }
-
 
   .foto-perfil {
     width: 90px;
-
     height: 115px;
-
     flex: 0 0 90px;
-
     object-fit: cover;
   }
 
-
   .contato {
     font-size: 12px;
-
     line-height: 1.7;
-
     padding-top: 0;
+    min-width: 0;
+  }
 
+  .contato a {
     overflow-wrap: anywhere;
   }
 
 
-  #abas {
-    gap: 4px;
-
-    margin-bottom: 20px;
-  }
-
-
-  .aba-botao {
-    font-size: 12px;
-
-    padding: 6px 10px;
-  }
-
-
-  h3 {
-    font-size: 18px;
-  }
-
+  /* Tabelas */
 
   .tabela-notas {
-    min-width: 520px;
-
+    min-width: 600px;
     font-size: 12px;
   }
-
 
   .tabela-notas th,
   .tabela-notas td {
@@ -778,72 +652,60 @@ footer p + p {
   }
 
 
-  .periodo-notas {
-    font-size: 16px;
-  }
-
+  /* Resumo */
 
   .resumo-card {
-    min-width: 110px;
-
+    min-width: 105px;
     padding: 8px 10px;
   }
-
 
   .resumo-card strong {
     font-size: 16px;
   }
 
 
-  /* CULTURA */
+  /* Cultura */
 
   .cultura-links {
-    gap: 10px;
+    gap: 8px;
   }
-
 
   .cultura-link {
-    width: calc(33.333% - 7px);
-
-    min-width: 90px;
-
-    padding: 5px;
+    width: calc(50% - 4px);
   }
-
 
   .cultura-link img {
-    height: 55px;
+    height: 65px;
   }
 
 
-  .cultura-link span {
-    font-size: 11px;
+  /* Avaliação */
+
+  .avaliacao-box {
+    padding: 12px;
   }
 
-
-  .lista-cultura span {
-    font-size: 12px;
-
-    padding: 4px 7px;
+  .avaliacao-opcoes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
   }
 
-
-  /* AVALIAÇÃO */
-
-  .avaliacao {
-    width: 100%;
-
-    padding: 14px;
+  .avaliacao-opcao span {
+    min-width: 0;
+    padding: 8px 3px;
   }
 
-
-  .estrelas-selecao label {
-    font-size: 29px;
+  .avaliacao-opcao strong {
+    font-size: 16px;
   }
 
+  .avaliacao-opcao small {
+    font-size: 9px;
+  }
 
   .estrelas-media {
-    font-size: 23px;
+    font-size: 22px;
   }
 
 }
