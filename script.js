@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+
   /* =========================
      ABAS
-  ========================= */
+  ========================== */
 
   const botoes = document.querySelectorAll(".aba-botao");
   const conteudos = document.querySelectorAll(".aba-conteudo");
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      TRADUÇÃO
-  ========================= */
+  ========================== */
 
   const botoesIdioma =
     document.querySelectorAll(".idioma-botao");
@@ -65,8 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Idioma da página */
-
     if (idioma === "en") {
 
       document.documentElement.lang = "en";
@@ -84,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Botão ativo */
-
     botoesIdioma.forEach(function (botao) {
 
       botao.classList.remove("ativo");
@@ -101,21 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Salva idioma */
-
     localStorage.setItem("idioma", idioma);
-
-
-    /* Atualiza textos da avaliação */
-
-    atualizarTextoAvaliacao(idioma);
 
   }
 
-
-  /* =========================
-     BOTÕES DE IDIOMA
-  ========================= */
 
   botoesIdioma.forEach(function (botao) {
 
@@ -132,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     DATA DA ÚLTIMA ATUALIZAÇÃO
-  ========================= */
+     DATA DA ATUALIZAÇÃO
+  ========================== */
 
   const ULTIMA_ATUALIZACAO =
     "25 de agosto de 2026";
@@ -151,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      CONTADOR DE VISITAS
-  ========================= */
+  ========================== */
 
   const NAMESPACE_CONTADOR =
     "sgcont.github.io";
@@ -173,9 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )
 
       .then(function (resposta) {
-
         return resposta.json();
-
       })
 
       .then(function (dados) {
@@ -212,77 +196,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* =========================
      AVALIAÇÃO
-  ========================= */
+  ========================== */
 
-  const botoesEstrela =
-    document.querySelectorAll(".estrela-botao");
+  const botoesAvaliacao =
+    document.querySelectorAll(
+      'input[name="nota-avaliacao"]'
+    );
 
-  const mediaElemento =
-    document.getElementById("media-estrelas");
-
-  const numeroAvaliacoes =
-    document.getElementById("numero-avaliacoes");
-
-  const estrelasMedia =
-    document.querySelectorAll(".estrela-media");
+  const botaoAvaliar =
+    document.getElementById("botao-avaliar");
 
   const mensagemAvaliacao =
     document.getElementById("mensagem-avaliacao");
 
+  const mediaNumero =
+    document.getElementById("media-numero");
 
-  const CHAVE_AVALIACOES =
-    "avaliacoes-lucas";
+  const estrelasPreenchidas =
+    document.getElementById("estrelas-preenchidas");
 
-
-  function pegarAvaliacoes() {
-
-    try {
-
-      const dados =
-        localStorage.getItem(CHAVE_AVALIACOES);
-
-      if (!dados) {
-        return [];
-      }
-
-      return JSON.parse(dados);
-
-    } catch (erro) {
-
-      return [];
-
-    }
-
-  }
+  const quantidadeAvaliacoes =
+    document.getElementById("quantidade-avaliacoes");
 
 
-  function salvarAvaliacoes(avaliacoes) {
-
-    localStorage.setItem(
-      CHAVE_AVALIACOES,
-      JSON.stringify(avaliacoes)
-    );
-
-  }
-
-
-  function calcularMedia() {
+  function atualizarMedia() {
 
     const avaliacoes =
-      pegarAvaliacoes();
+      JSON.parse(
+        localStorage.getItem("avaliacoes-monitoria") || "[]"
+      );
 
 
     if (avaliacoes.length === 0) {
 
-      if (mediaElemento) {
-        mediaElemento.textContent = "0.0";
-      }
+      mediaNumero.textContent = "0,0";
 
-      if (numeroAvaliacoes) {
-        numeroAvaliacoes.textContent = "0 avaliações";
-      }
+      estrelasPreenchidas.style.width = "0%";
 
-      preencherEstrelasMedia(0);
+      quantidadeAvaliacoes.textContent =
+        "0 avaliações";
 
       return;
 
@@ -290,252 +242,109 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     const soma =
-      avaliacoes.reduce(
-        function (total, valor) {
-          return total + valor;
-        },
-        0
-      );
+      avaliacoes.reduce(function (total, nota) {
+
+        return total + nota;
+
+      }, 0);
 
 
     const media =
       soma / avaliacoes.length;
 
 
-    const mediaFormatada =
-      media.toFixed(1);
+    mediaNumero.textContent =
+      media.toFixed(1).replace(".", ",");
 
 
-    if (mediaElemento) {
+    /*
+      5 estrelas correspondem a 100%.
+      Portanto:
 
-      mediaElemento.textContent =
-        mediaFormatada;
+      4,7 / 5 = 94%
+    */
 
-    }
-
-
-    if (numeroAvaliacoes) {
-
-      const idioma =
-        localStorage.getItem("idioma") || "pt";
+    const porcentagem =
+      (media / 5) * 100;
 
 
-      if (idioma === "en") {
-
-        numeroAvaliacoes.textContent =
-          avaliacoes.length +
-          (
-            avaliacoes.length === 1
-              ? " rating"
-              : " ratings"
-          );
-
-      } else {
-
-        numeroAvaliacoes.textContent =
-          avaliacoes.length +
-          (
-            avaliacoes.length === 1
-              ? " avaliação"
-              : " avaliações"
-          );
-
-      }
-
-    }
+    estrelasPreenchidas.style.width =
+      porcentagem + "%";
 
 
-    preencherEstrelasMedia(media);
+    quantidadeAvaliacoes.textContent =
+      avaliacoes.length === 1
+        ? "1 avaliação"
+        : avaliacoes.length + " avaliações";
 
   }
 
 
-  function preencherEstrelasMedia(media) {
+  if (botaoAvaliar) {
 
-    estrelasMedia.forEach(function (estrela, indice) {
+    botaoAvaliar.addEventListener("click", function () {
 
-      const valorEstrela =
-        indice + 1;
-
-      let percentual = 0;
+      let notaSelecionada = null;
 
 
-      if (media >= valorEstrela) {
+      botoesAvaliacao.forEach(function (botao) {
 
-        percentual = 100;
+        if (botao.checked) {
 
-      } else if (media > indice) {
-
-        percentual =
-          (media - indice) * 100;
-
-      }
-
-
-      const preenchimento =
-        estrela.querySelector(".preenchimento");
-
-
-      if (preenchimento) {
-
-        preenchimento.style.width =
-          percentual + "%";
-
-      }
-
-    });
-
-  }
-
-
-  /* Clique nas estrelas */
-
-  botoesEstrela.forEach(function (botao) {
-
-    botao.addEventListener("click", function () {
-
-      const nota =
-        Number(
-          botao.getAttribute("data-valor")
-        );
-
-
-      if (
-        nota < 1 ||
-        nota > 5
-      ) {
-        return;
-      }
-
-
-      const avaliacoes =
-        pegarAvaliacoes();
-
-
-      avaliacoes.push(nota);
-
-
-      salvarAvaliacoes(avaliacoes);
-
-
-      /* Marca a avaliação escolhida */
-
-      botoesEstrela.forEach(function (estrela) {
-
-        const valor =
-          Number(
-            estrela.getAttribute("data-valor")
-          );
-
-        if (valor <= nota) {
-
-          estrela.classList.add("ativa");
-
-        } else {
-
-          estrela.classList.remove("ativa");
+          notaSelecionada =
+            Number(botao.value);
 
         }
 
       });
 
 
-      calcularMedia();
+      if (notaSelecionada === null) {
 
+        mensagemAvaliacao.textContent =
+          "Selecione uma nota antes de avaliar.";
 
-      const idioma =
-        localStorage.getItem("idioma") || "pt";
-
-
-      if (mensagemAvaliacao) {
-
-        if (idioma === "en") {
-
-          mensagemAvaliacao.textContent =
-            "Thank you for your rating!";
-
-        } else {
-
-          mensagemAvaliacao.textContent =
-            "Obrigado pela avaliação!";
-
-        }
+        return;
 
       }
+
+
+      const avaliacoes =
+        JSON.parse(
+          localStorage.getItem("avaliacoes-monitoria") || "[]"
+        );
+
+
+      avaliacoes.push(notaSelecionada);
+
+
+      localStorage.setItem(
+        "avaliacoes-monitoria",
+        JSON.stringify(avaliacoes)
+      );
+
+
+      mensagemAvaliacao.textContent =
+        "Obrigado pela avaliação!";
+
+
+      atualizarMedia();
 
     });
-
-  });
-
-
-  /* =========================
-     TEXTO DA AVALIAÇÃO
-  ========================= */
-
-  function atualizarTextoAvaliacao(idioma) {
-
-    const instrucao =
-      document.getElementById("instrucao-avaliacao");
-
-
-    const mediaTexto =
-      document.getElementById("texto-media");
-
-
-    if (instrucao) {
-
-      if (idioma === "en") {
-
-        instrucao.textContent =
-          "How would you rate my profile?";
-
-      } else {
-
-        instrucao.textContent =
-          "Como você avaliaria meu perfil?";
-
-      }
-
-    }
-
-
-    if (mediaTexto) {
-
-      if (idioma === "en") {
-
-        mediaTexto.textContent =
-          "Average rating";
-
-      } else {
-
-        mediaTexto.textContent =
-          "Média das avaliações";
-
-      }
-
-    }
-
-
-    calcularMedia();
 
   }
 
 
+  atualizarMedia();
+
+
   /* =========================
      IDIOMA INICIAL
-  ========================= */
+  ========================== */
 
   const idiomaSalvo =
     localStorage.getItem("idioma") || "pt";
 
-
   traduzir(idiomaSalvo);
-
-
-  /* =========================
-     CARREGA MÉDIA
-  ========================= */
-
-  calcularMedia();
 
 });
