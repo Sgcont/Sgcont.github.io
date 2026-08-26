@@ -415,12 +415,22 @@ h3 {
   line-height: 1;
   color: #cccccc;
   cursor: pointer;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, transform 0.1s ease;
 }
 
 .estrela:hover,
 .estrela.selecionada {
   color: #e0a800;
+}
+
+.estrela:hover {
+  transform: scale(1.08);
+}
+
+.estrela:disabled {
+  cursor: default;
+  opacity: 0.55;
+  transform: none;
 }
 
 .valor-selecionado {
@@ -441,6 +451,12 @@ h3 {
 
 .botao-avaliacao:hover {
   background-color: #f0f0f0;
+}
+
+.botao-avaliacao:disabled {
+  cursor: default;
+  opacity: 0.55;
+  background-color: #ffffff;
 }
 
 .media-avaliacao {
@@ -499,6 +515,18 @@ h3 {
 
 .media-avaliacao .meta {
   margin-top: 8px;
+}
+
+.distribuicao-avaliacoes {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #666666;
+  display: inline-block;
+  text-align: left;
+}
+
+.linha-distribuicao {
+  margin-bottom: 2px;
 }
 
 
