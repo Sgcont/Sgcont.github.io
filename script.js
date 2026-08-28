@@ -43,8 +43,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================
-     TRADUÇÃO
+     ABRIR ABA VIA LINK (#hash)
+     Permite que um link tipo index.html#cultura abra
+     direto na aba certa (usado, por exemplo, pelo botão
+     "voltar" da página do Campo Minado em Python).
   ========================== */
+
+  const abaPelaHash = window.location.hash.replace("#", "");
+
+  if (abaPelaHash) {
+    const botaoAlvo = document.querySelector(
+      '.aba-botao[data-aba="' + abaPelaHash + '"]'
+    );
+    if (botaoAlvo) {
+      botaoAlvo.click();
+    }
+  }
 
   const botoesIdioma =
     document.querySelectorAll(".idioma-botao");
@@ -68,6 +82,23 @@ document.addEventListener("DOMContentLoaded", function () {
         elemento.textContent =
           elemento.getAttribute("data-pt");
 
+      }
+
+    });
+
+
+    /* Traduz placeholders (ex: campo de mensagem da avaliação),
+       que não são cobertos pela troca de textContent acima. */
+
+    const elementosComPlaceholder =
+      document.querySelectorAll("[data-pt-placeholder][data-en-placeholder]");
+
+    elementosComPlaceholder.forEach(function (elemento) {
+
+      if (idioma === "en") {
+        elemento.placeholder = elemento.getAttribute("data-en-placeholder");
+      } else {
+        elemento.placeholder = elemento.getAttribute("data-pt-placeholder");
       }
 
     });
