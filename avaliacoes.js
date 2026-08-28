@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const botaoEnviar =
     document.getElementById("enviar-avaliacao");
 
+  const campoMensagem =
+    document.getElementById("mensagem-avaliacao");
+
   const mediaValor =
     document.getElementById("media-valor");
 
@@ -110,6 +113,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (botaoEnviar) {
       botaoEnviar.disabled = true;
+    }
+
+    if (campoMensagem) {
+      campoMensagem.disabled = true;
     }
 
     if (valorSelecionado && mensagem) {
@@ -358,10 +365,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         const uuid = obterUuidVisitante();
 
+        const mensagemDigitada =
+          campoMensagem ? campoMensagem.value.trim().slice(0, 500) : "";
+
         await firestoreApi.setDoc(
           firestoreApi.doc(db, NOME_COLECAO_AVALIACOES, uuid),
           {
             nota: avaliacaoSelecionada,
+            mensagem: mensagemDigitada,
             criadoEm: firestoreApi.serverTimestamp()
           }
         );
