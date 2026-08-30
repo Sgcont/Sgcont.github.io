@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campo Minado em Python — Lucas de Araujo Contreiras</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="campo-minado-python.css">
+</head>
+<body>
+
+<div class="wrap-cmp">
+
+  <a href="index.html#cultura" class="voltar-cmp">&larr; voltar para o site</a>
+
+  <h1 class="titulo-cmp">🐍 Campo Minado em Python</h1>
+  <p class="subtitulo-cmp">
+    10×10, 16 minas — a lógica do jogo inteira roda em Python de verdade dentro do navegador,
+    via <a href="https://pyodide.org" target="_blank">Pyodide</a> (CPython compilado para WebAssembly).
+  </p>
+
+  <div id="status-carregamento" class="status-carregamento">
+    Carregando o interpretador Python no navegador... isso pode levar alguns segundos.
+  </div>
+
+  <div id="area-jogo" class="area-jogo" style="display:none;">
+
+    <div class="painel-cmp">
+      <div class="info-cmp">
+        <span class="rotulo-cmp">minas</span>
+        <span id="contador-minas" class="valor-cmp">16</span>
+      </div>
+      <button id="btn-reiniciar-cmp" class="botao-reiniciar-cmp" title="Reiniciar">⟳</button>
+      <div class="info-cmp">
+        <span class="rotulo-cmp">status</span>
+        <span id="status-jogo" class="valor-cmp">—</span>
+      </div>
+    </div>
+
+    <div class="modo-bandeira-cmp-wrap">
+      <button id="btn-modo-bandeira-cmp" class="botao-modo-cmp">🚩 modo bandeira: <span id="modo-estado-cmp">desligado</span></button>
+    </div>
+
+    <div id="tabuleiro-cmp" class="tabuleiro-cmp"></div>
+
+    <div id="mensagem-cmp" class="mensagem-cmp"></div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.3/full/pyodide.js"></script>
+<script src="campo-minado-python.js"></script>
+</body>
+</html>
