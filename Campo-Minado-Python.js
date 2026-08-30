@@ -14,7 +14,7 @@ const elModoEstado = document.getElementById("modo-estado-cmp");
 async function iniciar() {
   pyodide = await loadPyodide();
 
-  const resposta = await fetch("campo_minado.py");
+  const resposta = await fetch("campo-minado.py");
   const codigoPython = await resposta.text();
   await pyodide.runPythonAsync(codigoPython);
 
