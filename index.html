@@ -191,6 +191,17 @@
 
     <button
       class="aba-botao"
+      data-aba="previsao"
+      data-pt="Prevendo Notas Futuras (ML)"
+      data-en="Predicting Future Grades (ML)">
+
+      Prevendo Notas Futuras (ML)
+
+    </button>
+
+
+    <button
+      class="aba-botao"
       data-aba="avalie"
       data-pt="Avalie-me"
       data-en="Rate Me">
@@ -1636,6 +1647,117 @@
 
 
     <!-- =========================
+         PREVENDO NOTAS FUTURAS (ML)
+    ========================== -->
+
+    <section
+      id="previsao"
+      class="aba-conteudo">
+
+      <h3
+        data-pt="Prevendo Notas Futuras (ML)"
+        data-en="Predicting Future Grades (ML)">
+
+        Prevendo Notas Futuras (ML)
+
+      </h3>
+
+
+      <p
+        data-pt="Um modelo simples de regressão linear, rodando em Python de verdade dentro do navegador (via Pyodide), treinado com as minhas próprias notas dos períodos 1 a 4. Para cada disciplina que já cursei, ele relaciona a média das notas dos pré-requisitos oficiais (grade curricular do IC/UFRJ) com a nota que tirei nela — e usa essa relação para estimar disciplinas do 5º e 6º período que ainda não cursei."
+        data-en="A simple linear regression model, running as real Python inside the browser (via Pyodide), trained on my own grades from periods 1 through 4. For every course I have already taken, it relates the average grade of its official prerequisites (IC/UFRJ curriculum) to the grade I actually got — and uses that relationship to estimate 5th and 6th period courses I haven't taken yet.">
+
+        Um modelo simples de regressão linear, rodando em Python de verdade
+        dentro do navegador (via Pyodide), treinado com as minhas próprias
+        notas dos períodos 1 a 4. Para cada disciplina que já cursei, ele
+        relaciona a média das notas dos pré-requisitos oficiais (grade
+        curricular do IC/UFRJ) com a nota que tirei nela — e usa essa
+        relação para estimar disciplinas do 5º e 6º período que ainda
+        não cursei.
+
+      </p>
+
+      <p
+        class="meta"
+        data-pt="Sobre a margem de erro: com uma base de dados pequena (uma única pessoa, poucas dezenas de disciplinas), uma divisão fixa de 80% treino / 20% teste feita uma única vez seria pouco confiável — o resultado dependeria muito de sorte na divisão. Por isso o modelo usa Leave-One-Out Cross-Validation (treina deixando uma disciplina de fora por vez, testa nela, e repete para todas) para estimar o erro típico, e converte isso numa margem de erro com 99% de confiança (via distribuição t de Student). Quanto mais larga a margem, menos essa relação (nota de pré-requisito → nota futura) realmente prevê o resultado no meu histórico."
+        data-en="About the margin of error: with a small dataset (a single student, a few dozen courses), a single fixed 80% train / 20% test split would be unreliable — the result would depend too much on luck. Instead, the model uses Leave-One-Out Cross-Validation (it trains leaving one course out at a time, tests on it, and repeats for every course) to estimate the typical error, then converts that into a 99% confidence margin (via the Student's t-distribution). The wider the margin, the less that relationship (prerequisite grade → future grade) actually predicts the outcome in my own history.">
+
+        Sobre a margem de erro: com uma base de dados pequena (uma única
+        pessoa, poucas dezenas de disciplinas), uma divisão fixa de 80%
+        treino / 20% teste feita uma única vez seria pouco confiável —
+        o resultado dependeria muito de sorte na divisão. Por isso o
+        modelo usa Leave-One-Out Cross-Validation (treina deixando uma
+        disciplina de fora por vez, testa nela, e repete para todas)
+        para estimar o erro típico, e converte isso numa margem de erro
+        com 99% de confiança (via distribuição t de Student). Quanto
+        mais larga a margem, menos essa relação (nota de pré-requisito
+        → nota futura) realmente prevê o resultado no meu histórico.
+
+      </p>
+
+
+      <div class="previsao-controle">
+
+        <label
+          for="select-materia-previsao"
+          data-pt="Escolha uma disciplina do 5º ou 6º período:"
+          data-en="Choose a 5th or 6th period course:">
+
+          Escolha uma disciplina do 5º ou 6º período:
+
+        </label>
+
+        <select id="select-materia-previsao">
+          <option value=""
+            data-pt="Carregando..."
+            data-en="Loading...">Carregando...</option>
+        </select>
+
+      </div>
+
+
+      <p id="previsao-status" class="meta"></p>
+
+
+      <div id="previsao-resultado" class="previsao-resultado" style="display:none;">
+
+        <h4 id="previsao-nome-materia"></h4>
+
+        <div class="previsao-media">
+
+          <span
+            data-pt="Média estimada:"
+            data-en="Estimated grade:">
+            Média estimada:
+          </span>
+
+          <strong id="previsao-valor"></strong>
+
+          <span id="previsao-margem"></span>
+
+        </div>
+
+        <p id="previsao-intervalo" class="meta"></p>
+
+        <div class="previsao-prereqs">
+
+          <p
+            class="meta"
+            data-pt="Pré-requisitos usados no cálculo:"
+            data-en="Prerequisites used in the calculation:">
+            Pré-requisitos usados no cálculo:
+          </p>
+
+          <ul id="previsao-lista-prereqs"></ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
          AVALIE-ME
     ========================== -->
 
@@ -1874,6 +1996,7 @@
 
   <script src="script.js"></script>
   <script type="module" src="avaliacoes.js"></script>
+  <script type="module" src="previsao.js"></script>
 
 </body>
 
