@@ -561,6 +561,77 @@ h3 {
 
 
 /* =========================
+   PREVISÃO DE NOTAS (ML)
+========================= */
+
+.previsao-controle {
+  margin: 18px 0;
+}
+
+.previsao-controle label {
+  display: block;
+  font-size: 13px;
+  color: #444444;
+  margin-bottom: 6px;
+}
+
+.previsao-controle select {
+  width: 100%;
+  max-width: 420px;
+  padding: 7px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  background-color: #ffffff;
+}
+
+.previsao-resultado {
+  border: 1px solid #dddddd;
+  background-color: #fafafa;
+  padding: 16px 18px;
+  margin-top: 10px;
+}
+
+.previsao-resultado h4 {
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  color: #111111;
+}
+
+.previsao-media {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 12px;
+}
+
+.previsao-media strong {
+  font-size: 24px;
+  color: #111111;
+}
+
+.previsao-prereqs ul {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #444444;
+}
+
+.previsao-prereqs li {
+  margin-bottom: 3px;
+}
+
+.previsao-prereqs .previsto-tag {
+  font-style: italic;
+  color: #888888;
+}
+
+
+/* =========================
    RODAPÉ
 ========================= */
 
