@@ -296,6 +296,22 @@ h3 {
 
 
 /* =========================
+   HORÁRIO
+========================= */
+
+.tabela-horario td:first-child {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tabela-horario td:empty::after {
+  content: "—";
+  color: #cccccc;
+}
+
+
+/* =========================
    MINHA CULTURA
 ========================= */
 
