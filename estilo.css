@@ -296,6 +296,41 @@ h3 {
 
 
 /* =========================
+   CERTIFICADOS
+========================= */
+
+.certificados-galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.certificado-thumb {
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+}
+
+.certificado-thumb img {
+  width: 130px;
+  height: auto;
+  border: 1px solid #dddddd;
+  display: block;
+}
+
+.certificado-thumb:hover img {
+  border-color: #999999;
+}
+
+.certificado-thumb span {
+  display: block;
+  font-size: 11px;
+  color: #1a4fa0;
+  margin-top: 3px;
+}
+
+
+/* =========================
    HORÁRIO
 ========================= */
 
