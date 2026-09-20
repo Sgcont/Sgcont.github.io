@@ -214,7 +214,12 @@ document.addEventListener("DOMContentLoaded", function () {
             ? prereq.nota.toFixed(1)
             : prereq.nota.toFixed(1).replace(".", ",");
 
-      let texto = prereq.codigo + " — " + prereq.nome + ": " + notaTxt;
+      const periodoTxt =
+        prereq.periodo != null
+          ? prereq.periodo + "º — "
+          : "";
+
+      let texto = periodoTxt + prereq.codigo + " — " + prereq.nome + ": " + notaTxt;
 
       li.textContent = texto;
 
