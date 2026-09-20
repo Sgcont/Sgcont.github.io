@@ -1953,16 +1953,19 @@
 
 
       <p
-        data-pt="Um modelo simples de regressão linear, rodando em Python de verdade dentro do navegador (via Pyodide), treinado com as minhas próprias notas dos períodos 1 a 4. Para cada disciplina que já cursei, ele relaciona a média das notas dos pré-requisitos oficiais (grade curricular do IC/UFRJ) com a nota que tirei nela — e usa essa relação para estimar disciplinas do 5º e 6º período que ainda não cursei."
-        data-en="A simple linear regression model, running as real Python inside the browser (via Pyodide), trained on my own grades from periods 1 through 4. For every course I have already taken, it relates the average grade of its official prerequisites (IC/UFRJ curriculum) to the grade I actually got — and uses that relationship to estimate 5th and 6th period courses I haven't taken yet.">
+        data-pt="Um modelo simples de regressão linear, rodando em Python de verdade dentro do navegador (via Pyodide), treinado com as minhas próprias notas dos períodos 1 a 4. Para cada disciplina que já cursei, ele relaciona a média das notas de TODA a cadeia de pré-requisitos — não só o pré-requisito direto, mas os pré-requisitos dos pré-requisitos, recursivamente, até o 1º período (ex: para prever uma disciplina que depende de Cálculo II, a cadeia inclui também Cálculo I, pré-requisito de Cálculo II) — com a nota que tirei nela. Usar a cadeia inteira, em vez de só o pré-requisito direto, dá mais pontos de dado por previsão, o que reduz a margem de erro."
+        data-en="A simple linear regression model, running as real Python inside the browser (via Pyodide), trained on my own grades from periods 1 through 4. For every course I have already taken, it relates the average grade of the ENTIRE prerequisite chain — not just the direct prerequisite, but the prerequisites of the prerequisites, recursively, all the way back to period 1 (e.g., to predict a course that depends on Calculus II, the chain also includes Calculus I, a prerequisite of Calculus II) — to the grade I actually got. Using the full chain, instead of only the direct prerequisite, gives more data points per prediction, which reduces the margin of error.">
 
         Um modelo simples de regressão linear, rodando em Python de verdade
         dentro do navegador (via Pyodide), treinado com as minhas próprias
         notas dos períodos 1 a 4. Para cada disciplina que já cursei, ele
-        relaciona a média das notas dos pré-requisitos oficiais (grade
-        curricular do IC/UFRJ) com a nota que tirei nela — e usa essa
-        relação para estimar disciplinas do 5º e 6º período que ainda
-        não cursei.
+        relaciona a média das notas de TODA a cadeia de pré-requisitos —
+        não só o pré-requisito direto, mas os pré-requisitos dos
+        pré-requisitos, recursivamente, até o 1º período (ex: para prever
+        uma disciplina que depende de Cálculo II, a cadeia inclui também
+        Cálculo I, pré-requisito de Cálculo II) — com a nota que tirei
+        nela. Usar a cadeia inteira, em vez de só o pré-requisito direto,
+        dá mais pontos de dado por previsão, o que reduz a margem de erro.
 
       </p>
 
@@ -2032,9 +2035,9 @@
 
           <p
             class="meta"
-            data-pt="Pré-requisitos usados no cálculo:"
-            data-en="Prerequisites used in the calculation:">
-            Pré-requisitos usados no cálculo:
+            data-pt="Cadeia completa de pré-requisitos usada no cálculo (diretos e indiretos):"
+            data-en="Full prerequisite chain used in the calculation (direct and indirect):">
+            Cadeia completa de pré-requisitos usada no cálculo (diretos e indiretos):
           </p>
 
           <ul id="previsao-lista-prereqs"></ul>
