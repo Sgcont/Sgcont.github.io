@@ -3,9 +3,15 @@ Previsão de notas futuras (5º e 6º período) — Bacharelado em Ciência
 da Computação, UFRJ.
 
 Metodologia:
-- Para cada disciplina já cursada que tem pré-requisitos com nota
-  conhecida, criamos um par de treino: (média das notas dos
-  pré-requisitos, nota obtida na disciplina).
+- Para cada disciplina já cursada, calculamos a CADEIA COMPLETA de
+  pré-requisitos: não só os pré-requisitos diretos, mas também os
+  pré-requisitos DOS pré-requisitos, recursivamente, até o 1º
+  período (ex: para Cálculo 3, isso inclui Cálculo 2, e também
+  Cálculo 1, que é pré-requisito de Cálculo 2). O par de treino é
+  (média das notas de TODA essa cadeia, nota obtida na disciplina).
+  Usar a cadeia inteira, em vez de só o pré-requisito direto, dá
+  mais pontos de dado por amostra — o que, na prática, reduz a
+  variância da estimativa e encolhe a margem de erro.
 - Ajustamos uma regressão linear simples (1 variável) sobre esses
   pares: nota_prevista = a * media_prereq + b.
 - Como a base é pequena (poucas dezenas de disciplinas, um único
@@ -104,6 +110,24 @@ def media(valores):
     return sum(valores) / len(valores)
 
 
+def requisitos_transitivos(codigo, visitados=None):
+    """
+    Retorna o conjunto de TODOS os pré-requisitos de uma disciplina,
+    diretos e indiretos (pré-requisitos dos pré-requisitos, e assim
+    por diante), subindo até onde a grade curricular alcançar.
+    Ex: requisitos_transitivos("MAE992") inclui os pré-requisitos
+    diretos de Cálculo II e também os pré-requisitos DESSES.
+    """
+    if visitados is None:
+        visitados = set()
+    diretos = CURRICULO.get(codigo, {}).get("prereq", [])
+    for p in diretos:
+        if p not in visitados:
+            visitados.add(p)
+            requisitos_transitivos(p, visitados)
+    return visitados
+
+
 def regressao_linear(pares):
     xs = [p[0] for p in pares]
     ys = [p[1] for p in pares]
@@ -121,10 +145,11 @@ def prever(a, b, x):
 
 def construir_pares_treino():
     pares = []
-    for codigo, info in CURRICULO.items():
+    for codigo in CURRICULO:
         if codigo not in GRADES:
             continue
-        prereqs_conhecidos = [GRADES[p] for p in info["prereq"] if p in GRADES]
+        cadeia = requisitos_transitivos(codigo)
+        prereqs_conhecidos = [GRADES[p] for p in cadeia if p in GRADES]
         if not prereqs_conhecidos:
             continue
         pares.append((media(prereqs_conhecidos), GRADES[codigo]))
@@ -195,9 +220,9 @@ def calcular_previsao(codigo_alvo):
 
     previstos = {}
     for codigo in ordem_periodos_5_6:
-        info = CURRICULO[codigo]
+        cadeia = requisitos_transitivos(codigo)
         valores_prereq = []
-        for p in info["prereq"]:
+        for p in cadeia:
             if p in GRADES:
                 valores_prereq.append(GRADES[p])
             elif p in previstos:
@@ -213,13 +238,22 @@ def calcular_previsao(codigo_alvo):
         return {"erro": "Sem dados suficientes de pré-requisitos para prever essa disciplina."}
 
     info = CURRICULO[codigo_alvo]
+    cadeia_alvo = requisitos_transitivos(codigo_alvo)
+
+    # ordena a cadeia por período (mais cedo no curso primeiro), depois código
+    cadeia_ordenada = sorted(
+        cadeia_alvo,
+        key=lambda p: (CURRICULO.get(p, {}).get("periodo", 99), p),
+    )
+
     prereqs_usados = []
-    for p in info["prereq"]:
+    for p in cadeia_ordenada:
         valor = GRADES.get(p, previstos.get(p))
         se_previsto = p not in GRADES
         prereqs_usados.append({
             "codigo": p,
             "nome": CURRICULO.get(p, {}).get("nome", p),
+            "periodo": CURRICULO.get(p, {}).get("periodo"),
             "nota": round(valor, 1) if valor is not None else None,
             "previsto": se_previsto,
         })
@@ -232,6 +266,7 @@ def calcular_previsao(codigo_alvo):
         "margem_erro": round(margem, 1) if margem else None,
         "confianca": 99,
         "prereqs": prereqs_usados,
+        "prereqs_diretos": info["prereq"],
         "tamanho_treino": len(pares),
     }
 
