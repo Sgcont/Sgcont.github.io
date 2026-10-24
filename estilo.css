@@ -1,3 +1,9 @@
+/* Tirar os marcadores padrão */
+ul.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
 * {
   box-sizing: border-box;
 }
