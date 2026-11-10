@@ -55,6 +55,7 @@
     <button class="aba-botao" data-aba="cultura" data-pt="Minha cultura" data-en="My Culture">Minha cultura</button>
     <button class="aba-botao" data-aba="previsao" data-pt="Prevendo Notas Futuras (ML)" data-en="Predicting Future Grades (ML)">Prevendo Notas Futuras (ML)</button>
     <button class="aba-botao" data-aba="avalie" data-pt="Avalie-me" data-en="Rate Me">Avalie-me</button>
+    <button class="aba-botao" data-aba="oasis" data-pt="OASIS" data-en="OASIS">OASIS</button>
   </nav>
 
 
@@ -1433,6 +1434,105 @@
     </section>
 
 
+    <!-- =========================
+         OASIS
+    ========================== -->
+
+    <section id="oasis" class="aba-conteudo">
+
+      <h3 data-pt="OASIS — Dashboard de Acidentes no RJ" data-en="OASIS — RJ Traffic Accident Dashboard">
+        OASIS — Dashboard de Acidentes no RJ
+      </h3>
+
+      <p
+        data-pt="Uma versão demonstrativa do projeto Oasis, originalmente desenvolvido em Python com Streamlit. Aqui, o processamento dos dados roda em Python dentro do navegador por meio do Pyodide, sem precisar de um servidor."
+        data-en="A browser-based demonstration of the Oasis project, originally developed in Python with Streamlit. Here, data processing runs in Python inside the browser through Pyodide, without a server.">
+        Uma versão demonstrativa do projeto Oasis, originalmente desenvolvido em Python com Streamlit.
+        Aqui, o processamento dos dados roda em Python dentro do navegador por meio do Pyodide,
+        sem precisar de um servidor.
+      </p>
+
+      <p class="meta">
+        <a class="link-normal" href="https://github.com/luizvvm/Oasis" target="_blank" rel="noopener noreferrer"
+          data-pt="Ver o projeto original no GitHub →" data-en="View the original project on GitHub →">
+          Ver o projeto original no GitHub →
+        </a>
+      </p>
+
+      <div class="oasis-controle">
+        <label for="oasis-rodovia"
+          data-pt="Filtrar por rodovia:"
+          data-en="Filter by highway:">
+          Filtrar por rodovia:
+        </label>
+        <select id="oasis-rodovia">
+          <option value="todas" data-pt="Todas as rodovias" data-en="All highways">Todas as rodovias</option>
+        </select>
+        <button id="oasis-atualizar" type="button"
+          data-pt="Atualizar análise"
+          data-en="Refresh analysis">
+          Atualizar análise
+        </button>
+      </div>
+
+      <p id="oasis-status" class="meta"
+        data-pt="Abra a aba para carregar o motor Python."
+        data-en="Open the tab to load the Python engine.">
+        Abra a aba para carregar o motor Python.
+      </p>
+
+      <div class="oasis-cards">
+        <div class="oasis-card">
+          <strong id="oasis-total">—</strong>
+          <span data-pt="acidentes analisados" data-en="accidents analyzed">acidentes analisados</span>
+        </div>
+        <div class="oasis-card">
+          <strong id="oasis-mortos">—</strong>
+          <span data-pt="óbitos" data-en="deaths">óbitos</span>
+        </div>
+        <div class="oasis-card">
+          <strong id="oasis-feridos">—</strong>
+          <span data-pt="pessoas feridas" data-en="injured people">pessoas feridas</span>
+        </div>
+        <div class="oasis-card">
+          <strong id="oasis-media">—</strong>
+          <span data-pt="média de feridos por acidente" data-en="average injured per accident">média de feridos por acidente</span>
+        </div>
+      </div>
+
+      <div class="oasis-painel">
+        <h4 data-pt="Acidentes por rodovia" data-en="Accidents by highway">Acidentes por rodovia</h4>
+        <div id="oasis-grafico" class="oasis-grafico"></div>
+      </div>
+
+      <div class="oasis-painel">
+        <h4 data-pt="Amostra de ocorrências" data-en="Sample of incidents">Amostra de ocorrências</h4>
+        <div class="tabela-notas-container">
+          <table class="tabela-notas oasis-tabela">
+            <thead>
+              <tr>
+                <th data-pt="Data" data-en="Date">Data</th>
+                <th data-pt="Rodovia" data-en="Highway">Rodovia</th>
+                <th data-pt="Município" data-en="City">Município</th>
+                <th data-pt="Tipo de acidente" data-en="Accident type">Tipo de acidente</th>
+                <th data-pt="Feridos" data-en="Injured">Feridos</th>
+              </tr>
+            </thead>
+            <tbody id="oasis-tabela-corpo"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="meta"
+        data-pt="Demonstração baseada na estrutura do datatran2026_rj.csv e nas métricas do projeto original. A versão completa, com dados e mapas interativos, está no repositório Oasis."
+        data-en="Demonstration based on the structure of datatran2026_rj.csv and the original project's metrics. The complete version, with data and interactive maps, is available in the Oasis repository.">
+        Demonstração baseada na estrutura do datatran2026_rj.csv e nas métricas do projeto original.
+        A versão completa, com dados e mapas interativos, está no repositório Oasis.
+      </p>
+
+    </section>
+
+
   </main>
 
 
@@ -1455,6 +1555,7 @@
   <script src="script.js"></script>
   <script type="module" src="avaliacoes.js"></script>
   <script type="module" src="previsao.js"></script>
+  <script src="oasis.js"></script>
 
 </body>
 
